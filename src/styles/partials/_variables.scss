@@ -1,0 +1,28 @@
+// Primary colors
+$color-primary-1:#323232;
+$color-primary-2:#0095FF;
+$color-primary-3:#AFAFAF;
+$color-primary-4:#FFFFFF;
+
+
+// Secondary Colors
+$secondary-color-1:#000000;
+$secondary-color-2:#0065AD;
+$secondary-color-3:#E1E1E1;
+$secondary-color-4:#FAFAFA;
+
+//Font Face
+@font-face {
+    font-family: "AvenirNextLTPro-bold";
+    src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("otf");
+    font-weight: 700;  
+    font-style: normal;                                                     
+  }
+  @font-face {
+    font-family: "AvenirNextLTPro-Regular";
+    src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("otf");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+

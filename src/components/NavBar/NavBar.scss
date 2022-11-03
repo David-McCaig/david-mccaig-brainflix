@@ -1,0 +1,73 @@
+@use '/src/App.scss' as *;
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  &__logo {
+    margin-top: .3rem;
+    width: 7.6rem;
+    
+  } 
+  
+  &__container {
+    margin-top: 4.8px;
+    width: 81vw;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    margin-right: 1.2rem;
+  }
+
+  &__form {
+    display: inline-block;
+  }
+
+  &__form-logo {
+    position: absolute;
+    margin: .6rem 0rem 0rem .6rem;
+  }
+
+  &__form-search {
+    width: 70vw;
+    height: 2.1rem;
+    color: $color-primary-3;
+    border-radius: .5rem;
+    border: 1px solid $secondary-color-3;
+  }
+
+  &__form-image {
+    width: 2.3rem;
+    height: 2.3rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 1rem;
+  }
+}
+
+
+
+.button {
+    width: 93%;
+    height: 2.7rem;
+    background-color:$color-primary-2;
+    border-radius: .3rem;
+    margin-top: .5rem;
+    display: flex;
+    
+}
+
+.button__icon {
+  margin-left: .4rem;
+}
+
+.button__text {
+  text-align: center;
+  font-size: 12px;
+  width: 100%;
+  margin: 1rem 1.7rem 0rem 0rem;
+  text-decoration: none;
+  color: $color-primary-4;
+  text-transform: uppercase;
+}
+  
