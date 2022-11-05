@@ -21,6 +21,7 @@ function NavBar() {
                     <img src={ButtonUpload} className="button__icon" alt="upload icon"></img>
                     <a className="button__text" href="./NavBar.jsx">upload</a>
                 </div>
+                <img src={SearchFace} className="nav__form-image-desktop" alt="side profile of person"></img>
             </nav>
 
     );

@@ -1,12 +1,29 @@
-@use '/src/App.scss' as *;
+@use '/src/styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
 
 .nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include tablet {
+      flex-direction: row;
+  }
+
+  @include desktop {
+    width: 80%;
+    justify-content: center;
+    margin:auto;
+  }
   &__logo {
     margin-top: .3rem;
     width: 7.6rem;
+
+    @include tablet {
+      padding-left: 1.5rem;
+  }
+  
     
   } 
   
@@ -26,6 +43,14 @@
   &__form-logo {
     position: absolute;
     margin: .6rem 0rem 0rem .6rem;
+
+    @include tablet {
+      margin-left: 9.7rem;
+      margin: .8rem 0rem 0rem 9.7rem;
+  }
+    @include desktop {
+      margin-left: 21.3rem;
+  }
   }
 
   &__form-search {
@@ -34,6 +59,16 @@
     color: $color-primary-3;
     border-radius: .5rem;
     border: 1px solid $secondary-color-3;
+
+    @include tablet {
+      width: 30vw;
+      height: 2.8rem;
+      margin-left: 9rem;
+  }
+    @include tablet {
+    width: 22.5vw;
+    margin-left: 20.5rem;
+  }
   }
 
   &__form-image {
@@ -42,6 +77,10 @@
     object-fit: cover;
     border-radius: 50%;
     margin-left: 1rem;
+    @include tablet {
+    display: none;
+  }
+   
   }
 }
 
@@ -50,15 +89,24 @@
 .button {
     width: 93%;
     height: 2.7rem;
-    background-color:$color-primary-2;
+    background-color: $color-primary-2;
     border-radius: .3rem;
     margin-top: .5rem;
     display: flex;
+
+    @include tablet {
+      width: 36%;
+      height: 3.1rem;
+    }
     
 }
 
 .button__icon {
   margin-left: .4rem;
+
+  @include tablet {
+    width: 1.6rem;
+  }
 }
 
 .button__text {
@@ -69,5 +117,20 @@
   text-decoration: none;
   color: $color-primary-4;
   text-transform: uppercase;
+  font-family: $font-regular;
+
+}
+
+.nav__form-image-desktop{
+  display: none;
+
+  @include tablet {
+    width: 3.1rem;
+    height: 3.1rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0.3rem 2rem 0rem 1.4rem;
+    display: flex;
+  }
 }
   
