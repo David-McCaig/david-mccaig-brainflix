@@ -1,18 +1,38 @@
 @use '/src/styles/partials/variables' as *;
 @use '/src/styles/partials/mixins' as *;
 
+* {
+  margin: 0rem;
+}
+
 .video {
   display: flex;
   justify-content: center;
+
+  @include tablet {
+    // width: 100vh;
+    // height: 100%;
+    // margin: 0rem;
+    
+    background-color: black;
+    }
   &__container {
 
+    @include tablet {
+     
+      }
   }
 
   &__content {
     width: 100vw;
+    height: 100%;
+  @include tablet {
+    max-width: 90vw;
+    // width: 50rem;
+   }
 
   @include tablet {
-  
-  }
+    max-width: 66vw;
+   }
   }
 }

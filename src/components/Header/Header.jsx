@@ -2,7 +2,7 @@ import "./Header.scss";
 // import MainVideo from "../../../src/data/video-details.json";
 import Video from "../../assets/images/BMX.jpeg";
 
-function Header(props) {
+function Header() {
     return (
         <figure className="video">
             <div className="video__container">
