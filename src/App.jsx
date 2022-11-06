@@ -18,8 +18,8 @@ function App() {
     <NavBar />
     <Header />
     <Description />
-    <VideoList  />
     <Comments />
+    <VideoList  />
     </>
   );
 }

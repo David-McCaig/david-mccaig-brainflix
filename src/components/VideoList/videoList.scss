@@ -1,0 +1,49 @@
+@use '/src/styles/partials/variables' as *;
+@use '/src/styles/partials/mixins' as *;
+
+
+
+.videos {
+  border-top: 1px solid $secondary-color-3;
+  margin: 0rem 1rem;
+  
+  @include desktop {
+    max-width: 64rem;  
+    position: absolute;
+    left: 64rem;  
+    bottom: 2rem; 
+    border-top: 0px solid $secondary-color-3;
+  } 
+  &__title {
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+    text-transform: uppercase;
+    color: $color-primary-3;
+  }
+
+  &__container {
+    display: flex;
+    padding: 1rem;
+  }
+ 
+  &__img {
+      width: 7.3rem;
+      border-radius: .3rem;
+  }
+
+  &__text {
+    
+  }
+
+  &__subtitle {
+    font-family: $font-bold;
+    margin-left: 1rem;
+    width: 13rem;
+  }
+
+  &__author {
+    font-family: $font-regular;
+    margin-left: 1rem;
+  }
+}
+
