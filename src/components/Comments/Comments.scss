@@ -1,0 +1,202 @@
+@use '/src/styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.test {
+
+    @include tablet {
+     max-width: 79rem; 
+    }
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      
+    }
+  &__name {
+
+  }
+
+  &__title {
+    font-family: $font-bold;
+    padding: 1.2375rem 0rem 1.2375rem .7375rem;
+  }
+
+  &__container {
+    
+    @include tablet {
+      display: flex;
+      height: 3rem;
+       }
+  }
+
+
+  &__comment {
+    margin:0rem 0rem .3rem 5rem;
+    font-family: $font-regular;
+    color: $color-primary-3;
+  }
+
+  &__input {
+    width: 70%;
+    height: 6.5rem;
+    margin-left: 2rem;
+    border: .0625rem solid $color-primary-3;
+    border-radius: .2rem;
+    resize: none;
+    background-color: $secondary-color-4;
+
+    @include tablet {
+      width: 60%;
+      height: 2.5rem;
+    }
+  }
+
+  &__btn {
+    width: 72%;
+    height: 2.7rem;
+    background-color: $color-primary-2;
+    color: $color-primary-4;
+    border-radius: .3rem;
+    margin-top: .7rem;
+    margin-left: 4.9rem;
+    border: 0rem;
+    text-transform: uppercase;
+
+    @include tablet {
+        width: 10rem;
+        height: 2.9rem;
+        margin: -.04rem 0rem 0rem 2.4rem;
+      }
+  }
+
+  &__img {
+    width: 2.6rem;
+    height: 2.6rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: .5rem;
+    position: relative;
+    bottom: 4.4rem;
+    left: .7rem;
+
+    @include tablet {
+       bottom: 0rem;
+      }
+  }
+}
+
+.comments {
+    width: 90%;
+    height: 9rem;
+    border-top: 1px solid $secondary-color-3; ;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include tablet {
+      height: 6rem;
+      width: 90%;
+      max-width: 64.5rem;
+      padding: 1rem 0rem 2rem 0rem;
+      display: inline-block;
+          }
+      @include desktop {
+       
+      } 
+  
+      &__body {
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+          height: 7rem;
+              }
+        
+      }
+  
+      &__container {
+        width: 21rem;
+        display: flex;
+        height: 2.5rem;
+        
+        @include tablet {
+          width: 10rem;
+          } 
+      }
+  
+      &__title {
+        font-family: $font-bold;
+        font-size: 1rem;
+        margin-top: 1rem;
+        width: 10rem;
+        @include tablet {
+          width: 14rem;
+          height: 1rem;
+              }
+      }
+  
+      &__date {
+        margin-top: 1rem;
+        color: $color-primary-3;
+        font-size: .9375rem;
+        line-height: 1.125rem;
+        font-family: $font-regular;
+  
+        @include tablet {
+          margin-right: -30rem;
+          position: relative;
+          left: 25rem;
+          } 
+
+        @include tablet {
+          left: 39rem;
+        } 
+      }
+  
+      &__copy {
+        // max-width: 19.375rem;
+        // width: 15.75rem;
+        font-family: $font-regular;
+        line-height: 1.25rem;
+        margin-left: 4rem;
+    
+        @include tablet {
+          
+          
+          margin-top: 1rem;
+      } 
+    
+        @include desktop {
+              
+      } 
+    }
+  }
+  
+  #comment {
+    text-decoration: none;
+  }
+  
+  .images {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background-color: $secondary-color-3;
+    margin: 1rem .5rem .5rem 1rem;
+  
+  }
+  
+//   .comments {
+//     height: 50%;
+  
+//     @include tablet {
+//       height: 60%;
+//       } 
+//   }
+
+

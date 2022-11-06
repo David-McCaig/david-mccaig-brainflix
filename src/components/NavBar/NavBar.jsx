@@ -1,8 +1,8 @@
 import "./NavBar.scss";
 import BrainFlixLogo from "../../assets/Logo/BrainFlix-logo.svg";
 import SearchLogo from "../../assets/Icons/search.svg";
-import SearchFace from "../../assets/images/Mohan-muruge.jpg"
-import ButtonUpload from "../../assets/Icons/upload.svg"
+import SearchFace from "../../assets/images/Mohan-muruge.jpg";
+import ButtonUpload from "../../assets/Icons/upload.svg";
 
 
 function NavBar() {    

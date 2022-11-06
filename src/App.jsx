@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Header from "./components/Header/Header";
 import Description from "./components/Description/Description";
 import VideoList from "./components/VideoList/VideoList";
+import Comments from "./components/Comments/Comments";
 import './App.scss';
 import videos from "./data/videos.json";
 import video from "./data/video-details.json"
@@ -18,6 +19,7 @@ function App() {
     <Header />
     <Description />
     <VideoList  />
+    <Comments />
     </>
   );
 }
