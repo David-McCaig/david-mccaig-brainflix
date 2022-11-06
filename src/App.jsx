@@ -17,9 +17,13 @@ function App() {
     <>
     <NavBar />
     <Header />
+    <div className="video__list">
+    <div className="test">
     <Description />
     <Comments />
-    <VideoList  />
+    </div>
+    <VideoList />
+    </div>
     </>
   );
 }

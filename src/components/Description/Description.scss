@@ -1,15 +1,15 @@
 @use '/src/styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
 
-* {
-  font-size: .875rem;
-  line-height: 1.1875rem;
+// * {
+//   font-size: .875rem;
+//   line-height: 1.1875rem;
 
-  @include tablet {
-    font-size: .9375rem;
-    line-height: 1.375rem;
-    }
-}
+//   @include tablet {
+//     font-size: .9375rem;
+//     line-height: 1.375rem;
+//     }
+// }
 
 p {
   margin: .3rem;
@@ -30,8 +30,10 @@ p {
     }
 
   @include desktop {
-    
-  
+    display: inline-block;
+    width: 44rem;
+    margin-left: 8rem;
+    padding-right: 0rem;
     }
 }
 
@@ -50,12 +52,12 @@ p {
 }
 
 .description-output {
-  border-top: .0625rem solid $color-primary-3;
+  border-top: .0625rem solid $secondary-color-3;
   display: flex;
   padding: 1rem 0rem 1rem 0rem;
   width: 94%;
   @include tablet {
-    border-top: 0rem solid $color-primary-3;
+    border-top: 0rem solid $secondary-color-3;
     padding: 0rem 0rem .4rem 0rem;
     }
 
@@ -117,12 +119,17 @@ p {
 }
 
 .summary {
-  border-top: .0625rem solid $color-primary-3;
+  border-top: .0625rem solid $secondary-color-3;
   padding: 1rem .7562rem 0rem 0rem;
   width: 91%;
 
   @include tablet {
     width: 98%;
+  }
+
+  @include tablet {
+    width: 100%;
+    padding-right: 0rem;
   }
   &__text {
     font-family: $font-regular;

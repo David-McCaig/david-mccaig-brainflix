@@ -1,6 +1,14 @@
 @use '/src/styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
 
+section {
+
+  @include desktop {
+    width: 53rem;  
+  }
+  
+}
+
 .test {
 
     @include tablet {
@@ -14,7 +22,12 @@
     flex-direction: column;
 
     @include tablet {
-      
+      margin-left: 1rem;
+    }
+
+    @include desktop {
+      width: 46rem;
+      margin-left: 8rem;
     }
   &__name {
 
@@ -26,11 +39,14 @@
   }
 
   &__container {
-    
+
     @include tablet {
       display: flex;
       height: 3rem;
        }
+    @include desktop {
+      width: 43rem;
+    }
   }
 
 
@@ -102,34 +118,35 @@
     align-items: flex-start;
     @include tablet {
       height: 6rem;
-      width: 90%;
-      max-width: 64.5rem;
+      width: 100%;
+      // max-width: 64.5rem;
       padding: 1rem 0rem 2rem 0rem;
       display: inline-block;
           }
       @include desktop {
-       
+        width: 44rem;
+        margin-left: 8rem;
       } 
-  
+
       &__body {
         display: flex;
         flex-direction: column;
         @include tablet {
           height: 7rem;
               }
-        
+
       }
-  
+
       &__container {
         width: 21rem;
         display: flex;
         height: 2.5rem;
-        
+
         @include tablet {
           width: 10rem;
           } 
       }
-  
+
       &__title {
         font-family: $font-bold;
         font-size: 1rem;
@@ -140,63 +157,59 @@
           height: 1rem;
               }
       }
-  
+
       &__date {
         margin-top: 1rem;
         color: $color-primary-3;
         font-size: .9375rem;
         line-height: 1.125rem;
         font-family: $font-regular;
-  
+
         @include tablet {
           margin-right: -30rem;
           position: relative;
           left: 25rem;
           } 
 
-        @include tablet {
-          left: 39rem;
+        @include desktop {
+          left: 20rem;
         } 
       }
-  
+
       &__copy {
         // max-width: 19.375rem;
         // width: 15.75rem;
         font-family: $font-regular;
         line-height: 1.25rem;
         margin-left: 4rem;
-    
+
         @include tablet {
-          
-          
+
+
           margin-top: 1rem;
       } 
-    
+
         @include desktop {
-              
+
       } 
     }
   }
-  
+
   #comment {
     text-decoration: none;
   }
-  
+
   .images {
     width: 2.4rem;
     height: 2.4rem;
     border-radius: 50%;
     background-color: $secondary-color-3;
     margin: 1rem .5rem .5rem 1rem;
-  
+
   }
   
-//   .comments {
-//     height: 50%;
+
   
-//     @include tablet {
-//       height: 60%;
-//       } 
-//   }
+
 
 

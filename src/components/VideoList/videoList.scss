@@ -6,29 +6,44 @@
 .videos {
   border-top: 1px solid $secondary-color-3;
   margin: 0rem 1rem;
+  // z-index: -1;
+  
   
   @include desktop {
-    max-width: 64rem;  
-    position: absolute;
-    left: 64rem;  
-    bottom: 2rem; 
+    width: 78rem; 
+    height: 50rem;
     border-top: 0px solid $secondary-color-3;
+    border-left: 1px solid $secondary-color-3;
+    display: flex;
+    flex-direction: column;
+    margin: 0rem;
+    // align-items: flex-end;
+    // justify-content: flex-start;
+    // flex-shrink: 1;
+    // position:absolute;
+
   } 
   &__title {
     margin-top: 1.5rem;
     padding-left: 1rem;
     text-transform: uppercase;
     color: $color-primary-3;
+    @include desktop {
+      margin-right: 14rem;
+    
   }
-
+  }
   &__container {
     display: flex;
     padding: 1rem;
   }
  
   &__img {
-      width: 7.3rem;
+      width: auto;
+      height: 4rem;
+      
       border-radius: .3rem;
+      
   }
 
   &__text {
