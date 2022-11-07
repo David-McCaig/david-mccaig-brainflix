@@ -4,9 +4,9 @@ import SearchFace from "../../assets/images/Mohan-muruge.jpg";
 import AddComment from "../../assets/Icons/add_comment.svg";
 import { format } from 'date-fns';
 
-function Comments(props) { 
+function Comments(props) {
     console.log(props)
-    return ( 
+    return (
         <section>
             <div className="test">
                 <form className="form">
@@ -14,29 +14,30 @@ function Comments(props) {
                     <label className="form__comment" form="formComment">JOIN THE CONVERSATION</label>
                     <div className="form__container">
                         <img src={SearchFace} className="form__img" alt="Side profile of person" />
-                        <textarea className="form__input comment-input" id="formComment" placeholder="Add a new comment" name="formComment" required=""></textarea>
-                        <button className="form__btn btn" id="formSubmit" type="submit">comment</button>
+                        <textarea className="form__input" id="formComment" placeholder="Add a new comment" name="formComment" required=""></textarea>
+                            
+                            <button className="form__btn" id="formSubmit" type="submit">comment
+                                <img src={AddComment} className="form__icon" alt="Add comment button" />
+                            </button>
                     </div>
                 </form>
 
             </div>
-            {props.selectedVideo.comments !==undefined && props.selectedVideo.comments.map((comment) => {
+            {props.selectedVideo.comments !== undefined && props.selectedVideo.comments.map((comment) => {
                 return (
-                    <div className="comments" key={comment.id}> 
+                    <div className="comments" key={comment.id}>
                         <div className="comments__body">
                             <div className="comments__container">
                                 <div className="images"></div>
                                 <p className="comments__title">{comment.name}</p>
-                                <p className="comments__date">{format(new Date(comment.timestamp),'MM/dd/yyyy')}</p>
-
+                                <p className="comments__date">{format(new Date(comment.timestamp), 'MM/dd/yyyy')}</p>
                             </div>
                             <p className="comments__copy">{comment.comment}</p>
-
                         </div>
                     </div>
-        );
-     })} 
-    </section>
+                );
+            })}
+        </section>
 
 
 

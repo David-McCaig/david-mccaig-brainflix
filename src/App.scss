@@ -1,15 +1,14 @@
 @use './styles/partials/variables' as *;
 @use './styles/partials/mixins' as *;
 
-.test {
+.description__container {
 
   @include desktop {
     display: flex;
     flex-direction: column;
-    // z-index: -1;
-    width: 52.5rem;    
+    width: 52.5rem;
     display: inline-block;
-    }
+  }
 }
 
 .video__list {
@@ -17,6 +16,6 @@
   @include desktop {
     display: flex;
     z-index: -2;
-    }
+  }
 }
 

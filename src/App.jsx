@@ -10,35 +10,35 @@ import videoDetails from "./data/video-details.json"
 
 function App() {
   const [selectedVideo, setSelectedVideos] = useState(videoDetails[0]);
-  
 
-  const handleVideoChange = (videoId) => { 
-   
+
+  const handleVideoChange = (videoId) => {
+
     const newSelectedVideo = videoDetails.find((videos) => videoId === videos.id);
-    
-    setSelectedVideos(newSelectedVideo); 
-    
+
+    setSelectedVideos(newSelectedVideo);
+
   }
 
   const nonSelectedVideos = videos.filter((video) => {
     return video.id !== selectedVideo.id;
-   
-  }); 
 
-  return(
+  });
+
+  return (
     <>
-    <NavBar />
-    <Header selectedVideo={selectedVideo} />
-    <div className="video__list">
-    <div className="test">
-    <Description />
-    <Comments {...{selectedVideo}}/>
-    </div>
-    <VideoList 
-        videos={nonSelectedVideos} 
-        handleVideoChange={handleVideoChange} 
+      <NavBar />
+      <Header selectedVideo={selectedVideo} />
+      <div className="video__list">
+        <div className="description__container">
+          <Description {...{ selectedVideo }} />
+          <Comments {...{ selectedVideo }} />
+        </div>
+        <VideoList
+          videos={nonSelectedVideos}
+          handleVideoChange={handleVideoChange}
         />
-    </div>
+      </div>
     </>
   );
 }

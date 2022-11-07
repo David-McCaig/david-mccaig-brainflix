@@ -1,16 +1,6 @@
 @use '/src/styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
 
-// * {
-//   font-size: .875rem;
-//   line-height: 1.1875rem;
-
-//   @include tablet {
-//     font-size: .9375rem;
-//     line-height: 1.375rem;
-//     }
-// }
-
 p {
   margin: .3rem;
   font-size: .875rem;
@@ -18,23 +8,23 @@ p {
   @include tablet {
     font-size: .9375rem;
     line-height: 1.375rem;
-    }
+  }
 }
 
 .description {
   margin-left: 1rem;
 
   @include tablet {
-    padding: 0rem 2.4rem 0rem .5625rem ;
+    padding: 0rem 2.4rem 0rem .5625rem;
     max-width: 65rem;
-    }
+  }
 
   @include desktop {
     display: inline-block;
     width: 44rem;
     margin-left: 8rem;
     padding-right: 0rem;
-    }
+  }
 }
 
 .description__title {
@@ -45,9 +35,9 @@ p {
   padding: 1.5rem 0rem 1rem 0rem;
 
   @include tablet {
-  width: 33rem;
-  font-size: 2.0625rem;
-  padding: 2.25rem 0rem 1.5rem 0rem;
+    width: 33rem;
+    font-size: 2.0625rem;
+    padding: 2.25rem 0rem 1.5rem 0rem;
   }
 }
 
@@ -56,10 +46,11 @@ p {
   display: flex;
   padding: 1rem 0rem 1rem 0rem;
   width: 94%;
+
   @include tablet {
     border-top: 0rem solid $secondary-color-3;
     padding: 0rem 0rem .4rem 0rem;
-    }
+  }
 
   &__container {
     display: flex;
@@ -73,20 +64,16 @@ p {
       flex-direction: row;
       width: 30rem;
       justify-content: flex-end;
-      }
+    }
 
-    @include tablet {
-      
-      }
+    @include tablet {}
   }
-  
+
   &__author {
     font-family: $font-bold;
     font-size: .8125rem;
 
-    @include tablet {
-      
-    }
+    @include tablet {}
   }
 
   &__icon {
@@ -110,12 +97,13 @@ p {
       flex-grow: 1;
     }
   }
+
   &__likes {
     color: $color-primary-3;
     display: flex;
     font-family: $font-regular;
   }
-      
+
 }
 
 .summary {
@@ -131,13 +119,10 @@ p {
     width: 100%;
     padding-right: 0rem;
   }
+
   &__text {
     font-family: $font-regular;
     font-size: .875rem;
     line-height: 20px;
   }
 }
-
-// .test {
-//   display: flex;
-// }

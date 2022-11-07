@@ -8,35 +8,30 @@
 .video {
   display: flex;
   justify-content: center;
+  background-color: black;
 
-  @include tablet {
-    // width: 100vh;
-    // height: 100%;
-    // margin: 0rem;
+  @include tablet {}
 
-    background-color: black;
-    }
   &__container {
 
-    @include tablet {
-
-      }
+    @include tablet {}
   }
 
   &__content {
-    width: 100vw;
+    width: 100%;
     height: 100%;
-  @include tablet {
-    max-width: 100vw;
-    // width: 50rem;
-    max-height: 31rem;
-   }
+    max-height: 30rem;
 
-   @include desktop {
-    max-width: 50rem;
-    max-height: 31rem;
-   }
-    
-   }
+    @include tablet {
+      max-width: 93.5vw;
+      max-height: 31rem;
+    }
+
+    @include desktop {
+      max-width: 57rem;
+      max-height: 45rem;
+
+    }
+
   }
-
+}
