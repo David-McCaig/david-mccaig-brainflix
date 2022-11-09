@@ -3,7 +3,7 @@ import BrainFlixLogo from "../../assets/Logo/BrainFlix-logo.svg";
 import SearchLogo from "../../assets/Icons/search.svg";
 import SearchFace from "../../assets/images/Mohan-muruge.jpg";
 import ButtonUpload from "../../assets/Icons/upload.svg";
-
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
     return (
@@ -17,10 +17,12 @@ function NavBar() {
                 <img src={SearchFace} className="nav__form-image" alt="side profile of person"></img>
             </div>
 
-            <div className="button">
-                <img src={ButtonUpload} className="button__icon" alt="upload icon"></img>
-                <a className="button__text" href="./NavBar.jsx">upload</a>
-            </div>
+            
+                <div className="button">
+                    <img src={ButtonUpload} className="button__icon" alt="upload icon"></img>
+                    <a className="button__text" href="./NavBar.jsx">upload</a>
+                </div>
+            
             <img src={SearchFace} className="nav__form-image-desktop" alt="side profile of person"></img>
         </nav>
 
