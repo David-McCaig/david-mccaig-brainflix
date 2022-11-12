@@ -4,11 +4,12 @@ import SearchLogo from "../../assets/Icons/search.svg";
 import SearchFace from "../../assets/images/Mohan-muruge.jpg";
 import ButtonUpload from "../../assets/Icons/upload.svg";
 import { NavLink } from "react-router-dom";
+import ButtonNav from "../Button/ButtonNav"
 
 function NavBar() {
     return (
         <nav className="nav">
-            <img src={BrainFlixLogo} className="nav__logo" alt="side profile of person"></img>
+            <NavLink to ="/"><img src={BrainFlixLogo} className="nav__logo" alt="side profile of person"></img></NavLink>
             <div className="nav__container">
                 <form className="nav__form">
                     <img src={SearchLogo} className="nav__form-logo" alt="search logo"></img>
@@ -16,13 +17,10 @@ function NavBar() {
                 </form>
                 <img src={SearchFace} className="nav__form-image" alt="side profile of person"></img>
             </div>
-
-            
-                <div className="button">
-                    <img src={ButtonUpload} className="button__icon" alt="upload icon"></img>
-                    <a className="button__text" href="./NavBar.jsx">upload</a>
-                </div>
-            
+            <NavLink to="/upload" className="button">
+                <img src={ButtonUpload} className="button__icon" alt="upload icon"></img>
+                <p className="button__text" href="./NavBar.jsx">upload</p>
+            </NavLink>
             <img src={SearchFace} className="nav__form-image-desktop" alt="side profile of person"></img>
         </nav>
 

@@ -8,9 +8,10 @@ import './App.scss';
 import videos from "./data/videos.json";
 import videoDetails from "./data/video-details.json"
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import UploadPage from "./pages/HomePage/UploadPage/UploadPage";
+import UploadPage from "./pages/HomePage/UploadPage/UploadPage";
 import HomePage from "./pages/HomePage/HomePage/HomePage";
-import { BrowserRouter } from "react-router-dom";
+import VideoDetailsPage from "./pages/HomePage/VideoDetailsPage/VideoDetailsPage";
+// import { BrowserRouter } from "react-router-dom";
 
 function App() {
   const [selectedVideo, setSelectedVideos] = useState(videoDetails[0]);
@@ -26,18 +27,12 @@ function App() {
 
   return (
     <>
-      <NavBar />
       <BrowserRouter>
+      <NavBar />
       <Routes>
-      {/* <div className="video__list">
-        <div className="description__container"> */}
-        <HomePage selectedVideo={selectedVideo} />
-        {/* </div> */}
-        {/* <VideoList
-          videos={nonSelectedVideos}
-          handleVideoChange={handleVideoChange}
-        /> */}
-      {/* </div> */}
+        <Route  path="/" element={<HomePage selectedVideo={selectedVideo} videos={nonSelectedVideos} handleVideoChange={handleVideoChange} />} />
+        <Route path="/:id" element={<VideoDetailsPage/>} />
+        <Route path="/upload" element={<UploadPage />} />
       </Routes>
       </BrowserRouter>
     </>
