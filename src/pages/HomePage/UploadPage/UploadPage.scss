@@ -90,7 +90,7 @@ label {
         border-radius: .3rem;
         border: 1px solid $secondary-color-3;
         background-color: $secondary-color-4;
-
+        text-decoration: none;
         @include desktop {
             width: 50rem;
 
@@ -109,7 +109,7 @@ label {
         border: 1px solid $secondary-color-3;
         background-color: $secondary-color-4;
         display: flex;
-
+        text-decoration: none;
         @include desktop {
             width: 50rem;
 
