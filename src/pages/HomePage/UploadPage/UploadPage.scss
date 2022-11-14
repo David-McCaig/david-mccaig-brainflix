@@ -20,6 +20,10 @@ label {
     display: flex;
     flex-direction: column;
 
+    @include tablet {
+        margin-left: .5rem;
+    }
+
 
     &__title {
         border-top: 1px $secondary-color-3 solid;
@@ -53,13 +57,13 @@ label {
         @include tablet {
             border-bottom: 1px solid $secondary-color-3;
             padding-bottom: 1rem;
-            
-          }
 
-          @include desktop {
+        }
+
+        @include desktop {
             display: flex;
-            
-          }
+
+        }
     }
 }
 
@@ -75,7 +79,7 @@ label {
 
     &__container {
         color: black;
-        
+
     }
 
     &__input {
@@ -89,8 +93,8 @@ label {
 
         @include desktop {
             width: 50rem;
-            
-          }
+
+        }
 
     }
 
@@ -105,11 +109,11 @@ label {
         border: 1px solid $secondary-color-3;
         background-color: $secondary-color-4;
         display: flex;
-        
+
         @include desktop {
             width: 50rem;
-            
-          }
+
+        }
 
     }
 
@@ -117,48 +121,106 @@ label {
 
 input::placeholder {
     color: black;
-    font-family:$font-regular;
+    font-family: $font-regular;
 }
 
 textarea::placeholder {
     color: black;
-    font-family:$font-regular;
+    font-family: $font-regular;
 }
 
-// .button {
-//     width: 100%;
-//     height: 2.7rem;
-//     background-color: $color-primary-2;
-//     border-radius: .3rem;
-//     margin-top: .5rem;
-//     display: flex;
-//     text-decoration: none;
-   
-   
-  
-//     @include tablet {
-//       width: 36%;
-//       height: 2.6rem;
-//       margin-bottom: .2rem;
-//     }
-  
-//   }
-  
-//   .button__icon {
-//     margin-left: .4rem;
-//     width: 1.5rem;
-//     @include tablet {
-//       width: 1.6rem;
-//     }
-//   }
-  
-//   .button__text {
-//     text-align: center;
-//     font-size: 12px;
-//     width: 100%;
-//     margin: 1rem 1.7rem 0rem 0rem;
-//     text-decoration: none;
-//     color: $color-primary-4;
-//     text-transform: uppercase;
-//     font-family: $font-regular;
-//   }
+.button-cancel {
+    width: 100%;
+    height: 2.7rem;
+    background-color: $color-primary-4;
+    border-radius: .3rem;
+    margin-top: .5rem;
+    display: flex;
+    text-decoration: none;
+
+
+
+    @include tablet {
+        width: 10rem;
+        height: 2.6rem;
+        margin: 1.6rem 3.7rem 0rem 0rem;
+
+
+    }
+
+}
+
+
+
+.button-cancel__text {
+    text-align: center;
+    font-size: .75rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $color-primary-2;
+    text-transform: uppercase;
+    font-family: $font-bold;
+    line-height: 1.25rem;
+}
+
+
+.button-publish {
+    width: 96%;
+    height: 2.7rem;
+    background-color: $color-primary-2;
+    border-radius: .3rem;
+    margin: .5rem 1rem 0rem .4rem;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+
+
+
+    @include tablet {
+        width: 10rem;
+        height: 2.6rem;
+        margin: 1.6rem 3.7rem 0rem 0rem;
+
+    }
+
+}
+
+.button-publish__icon {
+    margin-left: .4rem;
+    width: 1.5rem;
+
+    @include tablet {
+        width: 1.6rem;
+    }
+}
+
+.button-publish__text {
+    text-align: center;
+    font-size: .75rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5rem;
+    text-decoration: none;
+    color: $color-primary-4;
+    text-transform: uppercase;
+    font-family: $font-bold;
+    line-height: 1.25rem;
+}
+
+.bottom-links {
+
+    @include tablet {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row-reverse;
+    }
+
+    @include desktop {
+        max-width: 82.25rem;
+    }
+}

@@ -8,7 +8,7 @@ import SearchFace from "../../assets/images/Mohan-muruge.jpg";
 import { format } from 'date-fns';
 
 
-function VideoDetails({ videoId }  ) {
+function VideoDetails({ videoId }) {
     const [selectedVideo, setSelectedVideo] = useState(null);
 
     const URL = "https://project-2-api.herokuapp.com";
@@ -21,9 +21,7 @@ function VideoDetails({ videoId }  ) {
             .get(URL + "/videos/" + videoId + API)
             .then((response) => {
                 setSelectedVideo(response.data);
-               
             })
-
             .catch((error) => {
                 console.log(error);
             });
@@ -34,47 +32,44 @@ function VideoDetails({ videoId }  ) {
     }
 
     return (
-<>
+        <>
 
-<figure className="video">
-            <div className="video__container">
-                <video poster={selectedVideo.image} className="video__content" controls>
-                </video>
-            </div>
-        </figure>
+            <figure className="video">
+                <div className="video__container">
+                    <video poster={selectedVideo.image} className="video__content" controls>
+                    </video>
+                </div>
+            </figure>
 
-        <section className="description">
+            <section className="description">
+                <h1 className="description__title">{selectedVideo.title}</h1>
+                <div className="description-output">
+                    <div className="description-output__container">
+                        <div className="description-output__author">
+                            <p>{selectedVideo.channel}</p>
+                        </div>
+                        <p className="description-output__date">{format(new Date(selectedVideo.timestamp), 'MM/dd/yyyy')}</p>
+                    </div>
 
-<h1 className="description__title">{selectedVideo.title}</h1>
-<div className="description-output">
-    <div className="description-output__container">
-        <div className="description-output__author">
-            <p>{selectedVideo.channel}</p>
-        </div>
-        <p className="description-output__date">{format(new Date(selectedVideo.timestamp), 'MM/dd/yyyy')}</p>
-    </div>
+                    <div className="description-output__container">
+                        <div className="description-output__views">
+                            <img className="description-output__icon" alt="Views icon" src={ViewIcon}></img>
+                            <p>{selectedVideo.views}</p>
+                        </div>
+                        <div className="description-output__likes">
+                            <img className="description-output__icon" alt="Views icon" src={HeartIcon}></img>
+                            <p>{selectedVideo.likes}</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="summary">
+                    <p className="summary__text">
+                        {selectedVideo.description}
+                    </p>
+                </div>
+            </section>
 
-    <div className="description-output__container">
-        <div className="description-output__views">
-            <img className="description-output__icon" alt="Views icon" src={ViewIcon}></img>
-            <p>{selectedVideo.views}</p>
-        </div>
-        <div className="description-output__likes">
-            <img className="description-output__icon" alt="Views icon" src={HeartIcon}></img>
-            <p>{selectedVideo.likes}</p>
-        </div>
-    </div>
-</div>
-<div className="summary">
-    <p className="summary__text">
-        {selectedVideo.description}
-    </p>
-
-</div>
-
-</section>
-
-<section>
+            <section>
                 <div className="test">
                     <form className="form">
                         <p className="form__title">3 Comments</p>
@@ -105,10 +100,7 @@ function VideoDetails({ videoId }  ) {
                     );
                 })}
             </section>
-
-               
-
-</>
+        </>
     );
 }
 

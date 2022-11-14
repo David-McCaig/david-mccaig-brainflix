@@ -1,6 +1,5 @@
 import "./UploadPage.scss";
 import UploadPreview from "../../../assets/images/Upload-video-preview.jpg"
-import ButtonNav from "../../../components/Button/ButtonNav";
 import { NavLink } from "react-router-dom";
 import ButtonPublish from "../../../assets/Icons/publish.svg"
 
@@ -14,23 +13,32 @@ function UploadPage() {
         <form className="upload-form">
           <label className="upload-form__comment" form="formComment">title your video</label>
           <div className="upload-form__container">
-            <input  id="formComment" className="upload-form__input" placeholder="Add a new comment" name="formComment" required=""></input>
+            <input id="formComment" className="upload-form__input" placeholder="Add a new comment" name="formComment" required=""></input>
           </div>
           <label className="upload-form__comment" form="formComment">add a video description</label>
           <div className="upload-form__container">
-            <textarea className="upload-form__input-bottom" id="formComment"  placeholder="Add a description to your video" name="formComment" ></textarea>
+            <textarea className="upload-form__input-bottom" id="formComment" placeholder="Add a description to your video" name="formComment" ></textarea>
           </div>
         </form>
       </div>
-      <NavLink to="/">
-                <div className="button">
-                    <img src={ButtonPublish}  className="button__icon" alt="upload icon"></img>
-                    <div className="button__text" href="./NavBar.jsx">publish</div>
-                </div>
-            </NavLink>
+      <div className="bottom-links">
+        <NavLink to="/" style={{ textDecoration: "none" }}>
+          <div className="button-publish" >
+            <img src={ButtonPublish} className="button-publish__icon" alt="upload icon"></img>
+            <div className="button-publish__text" href="./NavBar.jsx">publish</div>
+          </div>
+        </NavLink>
+
+        <NavLink to="/" style={{ textDecoration: "none" }}>
+          <div className="button-cancel" >
+            <div className="button-cancel__text" href="./NavBar.jsx">cancel</div>
+          </div>
+        </NavLink>
+      </div>
+
     </main>
-    
-    
+
+
   );
 }
 

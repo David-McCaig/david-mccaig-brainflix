@@ -5,7 +5,7 @@ import ViewIcon from "../../../assets/Icons/views.svg"
 import AddComment from "../../../assets/Icons/add_comment.svg";
 import SearchFace from "../../../assets/images/Mohan-muruge.jpg";
 import { useParams } from "react-router-dom";
-import { useState} from "react";
+import { useState } from "react";
 import axios from "axios";
 import React, { useEffect } from "react";
 import Item from "../../../components/Item/Item";
@@ -14,35 +14,35 @@ import Description from "../../../components/VideoDetails/Description/Descriptio
 
 
 function HomePage(selectedVideo) {
-    
-    const [videos, setVideos] = useState([]);
 
-    const defaultVideoId = videos.length > 0 ? videos[0].id : null;
+  const [videos, setVideos] = useState([]);
 
-    const URL = "https://project-2-api.herokuapp.com"; 
-    const API = "?api_key=18488576-2451-45b9-a5fd-965ff3e2a3ac";
+  const defaultVideoId = videos.length > 0 ? videos[0].id : null;
 
-    const { videoId } = useParams();
+  const URL = "https://project-2-api.herokuapp.com";
+  const API = "?api_key=18488576-2451-45b9-a5fd-965ff3e2a3ac";
 
-    const videoToDisplay = videoId || defaultVideoId;
+  const { videoId } = useParams();
 
-    useEffect(() => {
-        axios.get(URL + "/videos" + API).then((response) => {
-          setVideos(response.data);
-        });
-      }, []);
+  const videoToDisplay = videoId || defaultVideoId;
 
-      const filteredVideos = videos.filter((video) => video.id !== videoToDisplay);
-      
-    return (
-        <>
-        <div className="test-one">
+  useEffect(() => {
+    axios.get(URL + "/videos" + API).then((response) => {
+      setVideos(response.data);
+    });
+  }, []);
+
+  const filteredVideos = videos.filter((video) => video.id !== videoToDisplay);
+
+  return (
+    <>
+      <div className="test-one">
         <VideoDetails videoId={videoToDisplay} />
-        <Item videos={filteredVideos}/>
-        </div>
-        </>
-    );
-  }    
+        <Item videos={filteredVideos} />
+      </div>
+    </>
+  );
+}
 
 
 export default HomePage;
@@ -50,6 +50,6 @@ export default HomePage;
 
 
 
-        
-            
-        
+
+
+

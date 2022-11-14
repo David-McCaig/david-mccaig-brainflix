@@ -7,18 +7,18 @@ import HomePage from "./pages/HomePage/HomePage/HomePage";
 
 function App() {
 
-  
-  
+
+
 
   return (
     <>
       <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route  path="/" element={<HomePage/>} />
-        <Route path="/:videoId" element={<HomePage/>} />
-        <Route path="/upload" element={<UploadPage />} />
-      </Routes>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/:videoId" element={<HomePage />} />
+          <Route path="/upload" element={<UploadPage />} />
+        </Routes>
       </BrowserRouter>
     </>
   );

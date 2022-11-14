@@ -7,10 +7,8 @@
   justify-content: center;
   background-color: black;
   margin: 0rem;
-  
-  @include desktop {
 
-  }
+  @include desktop {}
 
   &__container {
 
@@ -265,6 +263,7 @@ section {
   &__icon {
     order: -1;
     margin: 0rem 6.3rem 0rem .4rem;
+
     @include tablet {
 
       margin: 0rem 1.4rem 0rem .4rem;
@@ -401,7 +400,7 @@ section {
 
   @include tablet {
     margin-left: 1.5rem;
-    }
+  }
 
   @include desktop {
     width: 20rem;
@@ -415,7 +414,7 @@ section {
     position: absolute;
     left: 52.5rem;
     top: 37.1rem;
-    
+
 
   }
 
@@ -424,7 +423,7 @@ section {
     text-transform: uppercase;
     font-size: .875rem;
     color: $color-primary-3;
-    
+
 
     @include desktop {
       margin-right: 14rem;
@@ -478,7 +477,7 @@ section {
   @include desktop {
     display: flex;
     z-index: -2;
-   
+
   }
 }
 
@@ -488,11 +487,8 @@ section {
     display: flex;
     flex-direction: column;
     // z-index: -1;
-    width: 52.5rem;    
+    width: 52.5rem;
     width: 52.5rem;
     display: inline-block;
-    }
   }
-
-
-
+}

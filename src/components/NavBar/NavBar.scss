@@ -8,6 +8,7 @@
   flex-direction: column;
   align-items: center;
   margin: 1rem;
+ 
 
   @include tablet {
     flex-direction: row;
@@ -35,7 +36,7 @@
   &__container {
     margin-top: 4.8px;
     width: 81vw;
-    height: 5rem;
+    height: 3.8rem;
     display: flex;
     align-items: center;
     margin-right: 1.2rem;
@@ -112,8 +113,8 @@
   display: none;
 
   @include tablet {
-    width: 3.1rem;
-    height: 3.1rem;
+    width: 2.5rem;
+    height: 2.5rem;
     object-fit: cover;
     border-radius: 50%;
     margin: 0.3rem 2rem 0rem 1.4rem;
@@ -122,15 +123,15 @@
 }
 
 .button {
-  width: 100%;
+  width: 97%;
   height: 2.7rem;
   background-color: $color-primary-2;
   border-radius: .3rem;
   margin-top: .5rem;
   display: flex;
   text-decoration: none;
- 
- 
+
+
 
   @include tablet {
     width: 36%;
@@ -143,6 +144,7 @@
 .button__icon {
   margin-left: .4rem;
   width: 1.5rem;
+
   @include tablet {
     width: 1.6rem;
   }
@@ -150,11 +152,15 @@
 
 .button__text {
   text-align: center;
-  font-size: 12px;
+  font-size: .75rem;
   width: 100%;
-  margin: 1rem 1.7rem 0rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.5rem;
   text-decoration: none;
   color: $color-primary-4;
   text-transform: uppercase;
-  font-family: $font-regular;
+  font-family: $font-bold;
+  line-height: 1.25rem;
 }
