@@ -7,11 +7,16 @@
   justify-content: center;
   background-color: black;
   margin: 0rem;
-  @include tablet {}
+  
+  @include desktop {
+
+  }
 
   &__container {
 
-    @include tablet {}
+    @include desktop {
+      height: 32rem;
+    }
   }
 
   &__content {
@@ -27,7 +32,7 @@
     @include desktop {
       max-width: 57rem;
       max-height: 45rem;
-
+      height: 25rem;
     }
 
   }
@@ -391,11 +396,15 @@ section {
 .videos {
   border-top: 1px solid $secondary-color-3;
   margin: 0rem 1rem;
+  box-sizing: border-box;
   // z-index: -1;
 
+  @include tablet {
+    margin-left: 1.5rem;
+    }
 
   @include desktop {
-    width: 78rem;
+    width: 20rem;
     height: 54rem;
     border-top: 0px solid $secondary-color-3;
     border-left: 1px solid $secondary-color-3;
@@ -403,7 +412,10 @@ section {
     flex-direction: column;
     padding-left: 2rem;
     margin-left: 0rem;
-
+    position: absolute;
+    left: 52.5rem;
+    top: 37.1rem;
+    
 
   }
 
@@ -412,16 +424,18 @@ section {
     text-transform: uppercase;
     font-size: .875rem;
     color: $color-primary-3;
+    
 
     @include desktop {
       margin-right: 14rem;
-
+      width: 10rem;
     }
   }
 
   &__container {
     display: flex;
     padding-top: 1rem;
+
   }
 
   &__img {
@@ -445,6 +459,9 @@ section {
     margin-left: 1rem;
     width: 11rem;
     font-size: .8125rem;
+    text-decoration: none;
+    color: $secondary-color-1;
+
   }
 
   &__author {
@@ -452,6 +469,7 @@ section {
     margin-left: 1rem;
     margin: .6rem 0rem 0rem 1rem;
     font-size: .8125rem;
+    color: $secondary-color-1;
   }
 }
 
@@ -475,3 +493,6 @@ section {
     display: inline-block;
     }
   }
+
+
+
