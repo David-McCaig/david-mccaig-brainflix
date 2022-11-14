@@ -2,8 +2,13 @@ import "./UploadPage.scss";
 import UploadPreview from "../../../assets/images/Upload-video-preview.jpg"
 import { NavLink } from "react-router-dom";
 import ButtonPublish from "../../../assets/Icons/publish.svg"
+import React from "react";
 
 function UploadPage() {
+  const sayHello = (event) => {
+    alert('Thanks for uploading')
+  }
+
   return (
     <main className="upload">
       <h1 className="upload__title">upload video</h1>
@@ -22,7 +27,7 @@ function UploadPage() {
         </form>
       </div>
       <div className="bottom-links">
-        <NavLink to="/" style={{ textDecoration: "none" }}>
+        <NavLink to="/" style={{ textDecoration: "none" }} onClick={sayHello}>
           <div className="button-publish" >
             <img src={ButtonPublish} className="button-publish__icon" alt="upload icon"></img>
             <div className="button-publish__text" href="./NavBar.jsx">publish</div>

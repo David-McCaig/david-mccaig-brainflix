@@ -1,6 +1,6 @@
 import HeartIcon from "../../../assets/Icons/likes.svg";
 import ViewIcon from "../../../assets/Icons/views.svg"
-import VideoDetails from "../VideoDetails";
+
 
 function Description({ selectedVideo }) {
 

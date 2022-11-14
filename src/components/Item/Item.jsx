@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import VideosItem from "../VideosItem/VideosItem";
 import "./Item.scss";
 

@@ -1,16 +1,11 @@
 import "./HomePage.scss";
-// import { format } from 'date-fns';
-import HeartIcon from "../../../assets/Icons/likes.svg";
-import ViewIcon from "../../../assets/Icons/views.svg"
-import AddComment from "../../../assets/Icons/add_comment.svg";
-import SearchFace from "../../../assets/images/Mohan-muruge.jpg";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import React, { useEffect } from "react";
 import Item from "../../../components/Item/Item";
 import VideoDetails from "../../../components/VideoDetails/VideoDetails";
-import Description from "../../../components/VideoDetails/Description/Description";
+
 
 
 function HomePage(selectedVideo) {
