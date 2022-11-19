@@ -5,22 +5,24 @@ import HeartIcon from "../../assets/Icons/likes.svg";
 import ViewIcon from "../../assets/Icons/views.svg"
 import AddComment from "../../assets/Icons/add_comment.svg";
 import SearchFace from "../../assets/images/Mohan-muruge.jpg";
-import { format } from 'date-fns';
+// import { format } from 'date-fns';
 
 
 function VideoDetails({ videoId }) {
     const [selectedVideo, setSelectedVideo] = useState(null);
 
-    const URL = "https://project-2-api.herokuapp.com";
-    const API = "?api_key=18488576-2451-45b9-a5fd-965ff3e2a3ac";
+    const URL = "http://localhost:6060";
+    // const API = "?api_key=18488576-2451-45b9-a5fd-965ff3e2a3ac";
 
     useEffect(() => {
         if (!videoId) return;
 
         axios
-            .get(URL + "/videos/" + videoId + API)
+            // .get(URL + "/videos/" + videoId + API)
+            .get(URL + "/videos/" + videoId)
             .then((response) => {
                 setSelectedVideo(response.data);
+                console.log(response.data)
             })
             .catch((error) => {
                 console.log(error);
@@ -33,7 +35,7 @@ function VideoDetails({ videoId }) {
 
     return (
         <>
-
+            <div>
             <figure className="video">
                 <div className="video__container">
                     <video poster={selectedVideo.image} className="video__content" controls>
@@ -48,7 +50,7 @@ function VideoDetails({ videoId }) {
                         <div className="description-output__author">
                             <p>{selectedVideo.channel}</p>
                         </div>
-                        <p className="description-output__date">{format(new Date(selectedVideo.timestamp), 'MM/dd/yyyy')}</p>
+                        {/* <p className="description-output__date">{format(new Date(selectedVideo.timestamp), 'MM/dd/yyyy')}</p> */}
                     </div>
 
                     <div className="description-output__container">
@@ -92,7 +94,7 @@ function VideoDetails({ videoId }) {
                                 <div className="comments__container">
                                     <div className="images"></div>
                                     <p className="comments__title">{comment.name}</p>
-                                    <p className="comments__date">{format(new Date(comment.timestamp), 'MM/dd/yyyy')}</p>
+                                    {/* <p className="comments__date">{format(new Date(comment.timestamp), 'MM/dd/yyyy')}</p> */}
                                 </div>
                                 <p className="comments__copy">{comment.comment}</p>
                             </div>
@@ -100,6 +102,8 @@ function VideoDetails({ videoId }) {
                     );
                 })}
             </section>
+
+            </div>
         </>
     );
 }
