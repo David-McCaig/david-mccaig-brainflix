@@ -22,7 +22,6 @@ function VideoDetails({ videoId }) {
             .get(URL + "/videos/" + videoId)
             .then((response) => {
                 setSelectedVideo(response.data);
-                console.log(response.data)
             })
             .catch((error) => {
                 console.log(error);
