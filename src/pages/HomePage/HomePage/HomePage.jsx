@@ -24,7 +24,6 @@ function HomePage(selectedVideo) {
   useEffect(() => {
     axios.get(URL + "/videos").then((response) => {
       setVideos(response.data);
-      console.log(response.data)
     });
   }, []);
 
