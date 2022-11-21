@@ -13,7 +13,7 @@ function NavBar() {
             <div className="nav__container">
                 <form className="nav__form">
                     <img src={SearchLogo} className="nav__form-logo" alt="search logo"></img>
-                    <input type="text" placeholder="         Search" className="nav__form-search" name="search"></input>
+                    <input type="text" placeholder="Search" className="nav__form-search" name="search"></input>
                 </form>
                 <img src={SearchFace} className="nav__form-image" alt="side profile of person"></img>
             </div>

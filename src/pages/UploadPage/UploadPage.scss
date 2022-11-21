@@ -123,6 +123,8 @@ label {
 
 }
 
+
+
 input::placeholder {
     color: black;
     font-family: $font-regular;
@@ -221,7 +223,7 @@ textarea::placeholder {
 }
 
 .bottom-links {
-
+    text-decoration: none;
     @include tablet {
         display: flex;
         justify-content: flex-start;

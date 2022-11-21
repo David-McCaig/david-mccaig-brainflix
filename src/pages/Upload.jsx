@@ -1,5 +1,5 @@
 import React from "react";
-import UploadPage from "./HomePage/UploadPage/UploadPage";
+import UploadPage from "./UploadPage/UploadPage";
 
 export default function Upload({ history }) {
   return (

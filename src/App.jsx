@@ -1,16 +1,13 @@
 import NavBar from "./components/NavBar/NavBar";
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import UploadPage from "./pages/HomePage/UploadPage/UploadPage";
+import UploadPage from "./pages/UploadPage/UploadPage";
 import HomePage from "./pages/HomePage/HomePage/HomePage";
 import NotFound from "./pages/NotFound"
 // import { BrowserRouter } from "react-router-dom";
-import Upload from "./pages/Upload";
+
 
 function App() {
-
-
-
 
   return (
     <>

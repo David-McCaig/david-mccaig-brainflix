@@ -57,7 +57,7 @@ p {
   @include desktop {
     display: inline-block;
     width: 44rem;
-    margin-left: 8rem;
+    margin-left: 12rem;
     padding-right: 0rem;
   }
 }
@@ -216,7 +216,7 @@ section {
     font-family: $font-regular;
     color: $color-primary-3;
     font-size: .875rem;
-
+    
     @include desktop {}
   }
 
@@ -228,10 +228,10 @@ section {
     border-radius: .2rem;
     resize: none;
     background-color: $secondary-color-4;
-
+    border: 1px solid $secondary-color-3;
     @include tablet {
       width: 60%;
-      height: 2.5rem;
+      height: 2.3rem;
     }
   }
 
@@ -280,6 +280,8 @@ section {
 
     @include tablet {
       bottom: 0rem;
+      width: 2.5rem;
+      height: 2.5rem;
     }
   }
 }
@@ -394,7 +396,6 @@ section {
   border-top: 1px solid $secondary-color-3;
   margin: 0rem 1rem;
   box-sizing: border-box;
-  // z-index: -1;
 
   @include tablet {
     margin-left: 1.5rem;
@@ -410,9 +411,8 @@ section {
     padding-left: 2rem;
     margin-left: 0rem;
     position: absolute;
-    left: 52.5rem;
+    left: 56.5rem;
     top: 37.1rem;
-
 
   }
 
@@ -432,7 +432,6 @@ section {
   &__container {
     display: flex;
     padding-top: 1rem;
-
   }
 
   &__img {

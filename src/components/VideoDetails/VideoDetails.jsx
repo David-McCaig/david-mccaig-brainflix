@@ -8,7 +8,7 @@ import SearchFace from "../../assets/images/Mohan-muruge.jpg";
 import { format } from 'date-fns';
 
 
-function VideoDetails({ videoId }) {
+function VideoDetails({ videoId, video }) {
     const [selectedVideo, setSelectedVideo] = useState(null);
 
     const URL = "http://localhost:6060";
@@ -22,7 +22,6 @@ function VideoDetails({ videoId }) {
             .get(URL + "/videos/" + videoId)
             .then((response) => {
                 setSelectedVideo(response.data);
-                console.log(response.data)
             })
             .catch((error) => {
                 console.log(error);

@@ -1,10 +1,9 @@
 import "./UploadPage.scss";
-import UploadPreview from "../../../assets/images/Upload-video-preview.jpg"
+import UploadPreview from "../../assets/images/Upload-video-preview.jpg"
 import { NavLink } from "react-router-dom";
-import ButtonPublish from "../../../assets/Icons/publish.svg"
+import ButtonPublish from "../../assets/Icons/publish.svg"
 import React from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const apiURL = "http://localhost:6060";
 
@@ -23,20 +22,17 @@ const apiURL = "http://localhost:6060";
       .catch((err) => {
         console.log(err);
       });
-      function Redirect() {
-        let navigate = useNavigate();
-        function onSubmit() {
-          navigate('/');
+
          
     // alert("Video uploaded");
-        }
-    } 
+ 
   };
 
   return (
     <main className="upload">
       <h1 className="upload__title">upload video</h1>
       <p className="upload__subtitle">video thumbnail</p>
+      
       <div className="upload__container">
         
         <img src={UploadPreview} className="upload__image" alt="Point of view riding bike"></img>
@@ -45,11 +41,12 @@ const apiURL = "http://localhost:6060";
           <div className="upload-form__container">
             <input id="formComment" className="upload-form__input" placeholder="Add a new comment" name="title" required=""></input>
           </div>
+          <div>
           <label className="upload-form__comment" form="formComment">add a video description</label>
           <div className="upload-form__container">
             <textarea className="upload-form__input-bottom" id="formComment" placeholder="Add a description to your video" name="description" ></textarea>
           </div>
-          
+          </div>
           <div className="bottom-links">
             
               <button form="Uploading" type="submit" className="button-publish" >

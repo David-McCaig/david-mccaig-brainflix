@@ -35,11 +35,11 @@
 
   &__container {
     margin-top: 4.8px;
-    width: 81vw;
+    width: 78vw;
     height: 3.8rem;
     display: flex;
     align-items: center;
-    margin-right: 1.2rem;
+    margin-right: 2.4rem;
   }
 
   &__form {
@@ -50,8 +50,9 @@
 
   &__form-logo {
     position: absolute;
-    margin: .6rem 0rem 0rem .6rem;
-
+    margin-left: 1rem;
+    margin-top: .8rem;
+    
     @include tablet {
       margin: 1rem 0rem 0rem 6.5rem;
       top: .8rem;
@@ -64,14 +65,14 @@
   }
 
   &__form-search {
-    margin-left: -.1rem;
-    width: 70vw;
-    height: 2.1rem;
+    margin-left: .5rem;
+    width: 58vw;
+    height: 2.5rem;
     color: $color-primary-3;
     border-radius: .3rem;
     border: 1px solid $secondary-color-3;
     background-color: $secondary-color-4;
-
+    padding-left: 2rem;
     @include tablet {
       width: 30vw;
       height: 2.3rem;
@@ -79,7 +80,7 @@
     }
 
     @include desktop {
-
+      margin-left: 0rem;
       height: 2.9rem;
     }
 
@@ -96,7 +97,7 @@
     height: 2.5rem;
     object-fit: cover;
     border-radius: 50%;
-    margin-left: 1rem;
+    margin-left: .5rem;
 
     @include tablet {
       display: none;
