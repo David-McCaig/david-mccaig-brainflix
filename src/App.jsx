@@ -5,6 +5,7 @@ import UploadPage from "./pages/HomePage/UploadPage/UploadPage";
 import HomePage from "./pages/HomePage/HomePage/HomePage";
 import NotFound from "./pages/NotFound"
 // import { BrowserRouter } from "react-router-dom";
+import Upload from "./pages/Upload";
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
           <Route path="/:videoId" element={<HomePage />} />
           <Route path="/upload" element={<UploadPage />} />
           <Route path="*" element={<NotFound />} />
-        </Routes>
+          </Routes>
       </BrowserRouter>
     </>
   );

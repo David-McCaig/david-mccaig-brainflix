@@ -55,9 +55,7 @@ label {
     &__container {
 
         @include tablet {
-            border-bottom: 1px solid $secondary-color-3;
             padding-bottom: 1rem;
-
         }
 
         @include desktop {
@@ -79,6 +77,11 @@ label {
 
     &__container {
         color: black;
+
+        @include desktop {
+            
+
+        }
 
     }
 
@@ -116,6 +119,7 @@ label {
         }
 
     }
+    
 
 }
 
@@ -176,8 +180,8 @@ textarea::placeholder {
     display: flex;
     justify-content: center;
     text-decoration: none;
-
-
+    border: none;
+    cursor: pointer;
 
     @include tablet {
         width: 10rem;
@@ -189,6 +193,7 @@ textarea::placeholder {
 }
 
 .button-publish__icon {
+    margin-top: .4rem;
     margin-left: .4rem;
     width: 1.5rem;
 
@@ -200,6 +205,7 @@ textarea::placeholder {
 .button-publish__text {
     text-align: center;
     font-size: .75rem;
+    margin-top: .6rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -210,6 +216,8 @@ textarea::placeholder {
     text-transform: uppercase;
     font-family: $font-bold;
     line-height: 1.25rem;
+    border: none;
+    outline: none;
 }
 
 .bottom-links {
@@ -218,6 +226,8 @@ textarea::placeholder {
         display: flex;
         justify-content: flex-start;
         flex-direction: row-reverse;
+        margin-top: 1.7rem;
+        border-top: 1px solid $secondary-color-3;
     }
 
     @include desktop {
