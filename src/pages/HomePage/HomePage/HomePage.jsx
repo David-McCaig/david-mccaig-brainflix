@@ -11,7 +11,6 @@ import VideoDetails from "../../../components/VideoDetails/VideoDetails";
 function HomePage() {
 
   const [videos, setVideos] = useState([]);
-  const [selectedVideo, setSelectedVideo] = useState(null);
 
   const defaultVideoId = videos.length > 0 ? videos[0].id : null;
 
@@ -30,28 +29,33 @@ function HomePage() {
 
   const filteredVideos = videos.filter((video) => video.id !== videoToDisplay);
 
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  const URLID = "http://localhost:6060";
+  // const API = "?api_key=18488576-2451-45b9-a5fd-965ff3e2a3ac";
+
   useEffect(() => {
-    if (!videoId) return;
+      if (!videoToDisplay) return;
 
-    axios
-      .get(URL + "/videos/" + videoId)
-      .then((response) => {
-        setSelectedVideo(response.data);
-
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [videoId]);
+      axios
+          // .get(URL + "/videos/" + videoId + API)
+          .get(URLID + "/videos/" + videoToDisplay)
+          .then((response) => {
+              setSelectedVideo(response.data);
+          })
+          .catch((error) => {
+              console.log(error);
+          });
+  }, [videoToDisplay]);
 
   if (!selectedVideo) {
-    return <div>Loading......</div>;
+      return <div>Loading......</div>;
   }
 
   return (
     <>
-      <VideoDetails selectedVideo={selectedVideo} />
-      <Item videos={filteredVideos} />
+        <VideoDetails selectedVideo={selectedVideo} />
+        <Item videos={filteredVideos} />
     </>
   );
 }

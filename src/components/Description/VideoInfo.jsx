@@ -1,25 +1,13 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import "./VideoDetails.scss";
 import HeartIcon from "../../assets/Icons/likes.svg";
 import ViewIcon from "../../assets/Icons/views.svg"
-import AddComment from "../../assets/Icons/add_comment.svg";
-import SearchFace from "../../assets/images/Mohan-muruge.jpg";
 import { format } from 'date-fns';
+import SearchFace from "../../assets/images/Mohan-muruge.jpg";
+import AddComment from "../../assets/Icons/add_comment.svg";
 
-
-function VideoDetails({ selectedVideo }) {
-
+function VideoInfo({selectedVideo}) {
+    
     return (
         <>
-            <div>
-            <figure className="video">
-                <div className="video__container">
-                    <video poster={selectedVideo.image} className="video__content" controls>
-                    </video>
-                </div>
-            </figure>
-
             <section className="description">
                 <h1 className="description__title">{selectedVideo.title}</h1>
                 <div className="description-output">
@@ -27,7 +15,7 @@ function VideoDetails({ selectedVideo }) {
                         <div className="description-output__author">
                             <p>{selectedVideo.channel}</p>
                         </div>
-                        <p className="description-output__date">{format(new Date(selectedVideo.timestamp), 'MM/dd/yyyy')}</p>
+                        {/* <p className="description-output__date">{format(new Date(selectedVideo.timestamp), 'MM/dd/yyyy')}</p> */}
                     </div>
 
                     <div className="description-output__container">
@@ -79,10 +67,9 @@ function VideoDetails({ selectedVideo }) {
                     );
                 })}
             </section>
-
-            </div>
         </>
+
     );
 }
 
-export default VideoDetails;
+export default VideoInfo;
