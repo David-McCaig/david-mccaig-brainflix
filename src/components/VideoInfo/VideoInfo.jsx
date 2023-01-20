@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import "./VideoDetails.scss";
+import "./VideoInfo.scss";
 import HeartIcon from "../../assets/Icons/likes.svg";
 import ViewIcon from "../../assets/Icons/views.svg"
 import AddComment from "../../assets/Icons/add_comment.svg";
@@ -8,7 +6,7 @@ import SearchFace from "../../assets/images/Mohan-muruge.jpg";
 import { format } from 'date-fns';
 
 
-function VideoDetails({ selectedVideo }) {
+function VideoInfo({ selectedVideo }) {
 
     return (
         <>
@@ -85,4 +83,4 @@ function VideoDetails({ selectedVideo }) {
     );
 }
 
-export default VideoDetails;
+export default VideoInfo;

@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import React, { useEffect } from "react";
 import Item from "../../../components/Item/Item";
-import VideoDetails from "../../../components/VideoDetails/VideoDetails";
+import VideoDetails from "../../../components/VideoInfo/VideoInfo";
 
 
 
