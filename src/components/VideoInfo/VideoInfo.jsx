@@ -10,14 +10,6 @@ function VideoInfo({ selectedVideo }) {
 
     return (
         <>
-            <div>
-            <figure className="video">
-                <div className="video__container">
-                    <video poster={selectedVideo.image} className="video__content" controls>
-                    </video>
-                </div>
-            </figure>
-
             <section className="description">
                 <h1 className="description__title">{selectedVideo.title}</h1>
                 <div className="description-output">
@@ -77,8 +69,6 @@ function VideoInfo({ selectedVideo }) {
                     );
                 })}
             </section>
-
-            </div>
         </>
     );
 }
