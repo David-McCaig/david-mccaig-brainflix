@@ -8,9 +8,10 @@ import VideoDetails from "../../../components/VideoDetails/VideoDetails";
 
 
 
-function HomePage(selectedVideo) {
+function HomePage() {
 
   const [videos, setVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   const defaultVideoId = videos.length > 0 ? videos[0].id : null;
 
@@ -29,10 +30,28 @@ function HomePage(selectedVideo) {
 
   const filteredVideos = videos.filter((video) => video.id !== videoToDisplay);
 
+  useEffect(() => {
+    if (!videoId) return;
+
+    axios
+      .get(URL + "/videos/" + videoId)
+      .then((response) => {
+        setSelectedVideo(response.data);
+
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [videoId]);
+
+  if (!selectedVideo) {
+    return <div>Loading......</div>;
+  }
+
   return (
     <>
-        <VideoDetails videoId={videoToDisplay} />
-        <Item videos={filteredVideos} />
+      <VideoDetails selectedVideo={selectedVideo} />
+      <Item videos={filteredVideos} />
     </>
   );
 }

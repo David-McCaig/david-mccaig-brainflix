@@ -8,30 +8,9 @@ import SearchFace from "../../assets/images/Mohan-muruge.jpg";
 import { format } from 'date-fns';
 
 
-function VideoDetails({ videoId, video }) {
-    const [selectedVideo, setSelectedVideo] = useState(null);
+function VideoDetails({selectedVideo}) {
 
-    const URL = "http://localhost:6060";
-    // const API = "?api_key=18488576-2451-45b9-a5fd-965ff3e2a3ac";
-
-    useEffect(() => {
-        if (!videoId) return;
-
-        axios
-            // .get(URL + "/videos/" + videoId + API)
-            .get(URL + "/videos/" + videoId)
-            .then((response) => {
-                setSelectedVideo(response.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }, [videoId]);
-
-    if (!selectedVideo) {
-        return <div>Loading......</div>;
-    }
-
+    
     return (
         <>
             <div>
