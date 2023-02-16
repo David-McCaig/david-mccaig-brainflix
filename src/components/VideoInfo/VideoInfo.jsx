@@ -9,7 +9,8 @@ import { format } from 'date-fns';
 function VideoInfo({ selectedVideo }) {
 
     return (
-        <>
+        <> 
+        <div>
             <section className="description">
                 <h1 className="description__title">{selectedVideo.title}</h1>
                 <div className="description-output">
@@ -39,7 +40,6 @@ function VideoInfo({ selectedVideo }) {
             </section>
 
             <section>
-                <div className="test">
                     <form className="form">
                         <p className="form__title">3 Comments</p>
                         <label className="form__comment" form="formComment">JOIN THE CONVERSATION</label>
@@ -53,7 +53,6 @@ function VideoInfo({ selectedVideo }) {
                         </div>
                     </form>
 
-                </div>
                 {selectedVideo.comments !== undefined && selectedVideo.comments.map((comment) => {
                     return (
                         <div className="comments" key={comment.id}>
@@ -69,6 +68,7 @@ function VideoInfo({ selectedVideo }) {
                     );
                 })}
             </section>
+            </div>
         </>
     );
 }

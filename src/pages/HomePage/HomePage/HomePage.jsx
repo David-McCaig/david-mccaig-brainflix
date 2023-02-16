@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import React, { useEffect } from "react";
 import Item from "../../../components/Item/Item";
-import VideoDetails from "../../../components/VideoInfo/VideoInfo";
+import VideoInfo from "../../../components/VideoInfo/VideoInfo";
 import Video from "../../../components/Video/Video";
 
 
@@ -55,8 +55,10 @@ function HomePage() {
   return (
     <>
         <Video selectedVideo={selectedVideo} />
-        <VideoDetails selectedVideo={selectedVideo} />
+        <div className="video__info">
+        <VideoInfo selectedVideo={selectedVideo} />
         <Item videos={filteredVideos} />
+        </div>
     </>
   );
 }
