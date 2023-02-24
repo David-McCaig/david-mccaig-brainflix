@@ -6,8 +6,8 @@ import SearchFace from "../../assets/images/Mohan-muruge.jpg";
 import { format } from 'date-fns';
 
 
-function VideoInfo({ selectedVideo }) {
-
+function VideoInfo({ selectedVideo, selectedComments }) {
+   
     return (
         <> 
         <div>
@@ -18,7 +18,7 @@ function VideoInfo({ selectedVideo }) {
                         <div className="description-output__author">
                             <p>{selectedVideo.channel}</p>
                         </div>
-                        <p className="description-output__date">{format(new Date(selectedVideo.timestamp), 'MM/dd/yyyy')}</p>
+                        {/* <p className="description-output__date">{format(new Date(selectedVideo.timestamp), 'MM/dd/yyyy')}</p> */}
                     </div>
 
                     <div className="description-output__container">
@@ -53,14 +53,14 @@ function VideoInfo({ selectedVideo }) {
                         </div>
                     </form>
 
-                {selectedVideo.comments !== undefined && selectedVideo.comments.map((comment) => {
+                {selectedComments && selectedComments.map((comment) => {
                     return (
                         <div className="comments" key={comment.id}>
                             <div className="comments__body">
                                 <div className="comments__container">
                                     <div className="images"></div>
                                     <p className="comments__title">{comment.name}</p>
-                                    <p className="comments__date">{format(new Date(comment.timestamp), 'MM/dd/yyyy')}</p>
+                                    {/* <p className="comments__date">{format(new Date(comment.timestamp), 'MM/dd/yyyy')}</p> */}
                                 </div>
                                 <p className="comments__copy">{comment.comment}</p>
                             </div>
