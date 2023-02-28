@@ -1,0 +1,17 @@
+@use '/src/styles/partials/variables' as *;
+@use '/src/styles/partials/mixins' as *;
+
+.upload__success {
+    width: 100%;
+    height: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0rem;
+}
+
+.hello {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
