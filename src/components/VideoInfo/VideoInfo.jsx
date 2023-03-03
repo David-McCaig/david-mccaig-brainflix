@@ -3,11 +3,36 @@ import HeartIcon from "../../assets/Icons/likes.svg";
 import ViewIcon from "../../assets/Icons/views.svg"
 import AddComment from "../../assets/Icons/add_comment.svg";
 import SearchFace from "../../assets/images/Mohan-muruge.jpg";
+import React, {useState} from "react"
 import { format } from 'date-fns';
+import axios from "axios";
 
 
 function VideoInfo({ selectedVideo, selectedComments }) {
    
+    const [comment, setComment] = useState("");
+
+    const handleChange = (e) => {
+        setComment(e.target.value)
+    }
+
+    const handleSubmit = (e) => {
+        
+        axios
+        .post ('http://localhost:8080/comments/upload', {
+            "comment": comment,
+            "videos_id": selectedVideo.id
+        })
+        .then ((res) => {
+            console.log(res)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+
+    console.log(selectedVideo.created_at)
+
     return (
         <> 
         <div>
@@ -18,7 +43,8 @@ function VideoInfo({ selectedVideo, selectedComments }) {
                         <div className="description-output__author">
                             <p>{selectedVideo.channel}</p>
                         </div>
-                        {/* <p className="description-output__date">{format(new Date(selectedVideo.timestamp), 'MM/dd/yyyy')}</p> */}
+                        
+                        <p className="description-output__date">{format(new Date(selectedVideo.created_at), 'yyyy/dd/dd')}</p>
                     </div>
 
                     <div className="description-output__container">
@@ -40,12 +66,12 @@ function VideoInfo({ selectedVideo, selectedComments }) {
             </section>
 
             <section>
-                    <form className="form">
+                    <form className="form" onSubmit={handleSubmit}>
                         <p className="form__title">3 Comments</p>
                         <label className="form__comment" form="formComment">JOIN THE CONVERSATION</label>
                         <div className="form__container">
                             <img src={SearchFace} className="form__img" alt="Side profile of person" />
-                            <textarea className="form__input" id="formComment" placeholder="Add a new comment" name="formComment" required=""></textarea>
+                            <input className="form__input" value={comment} onChange={handleChange} id="formComment" placeholder="Add a new comment" name="formComment" required=""></input>
 
                             <button className="form__btn" id="formSubmit" type="submit">comment
                                 <img src={AddComment} className="form__icon" alt="Add comment button" />
@@ -60,7 +86,7 @@ function VideoInfo({ selectedVideo, selectedComments }) {
                                 <div className="comments__container">
                                     <div className="images"></div>
                                     <p className="comments__title">{comment.name}</p>
-                                    {/* <p className="comments__date">{format(new Date(comment.timestamp), 'MM/dd/yyyy')}</p> */}
+                                    <p className="comments__date">{format(new Date(comment.created_at), 'yyyy/dd/dd')}</p>
                                 </div>
                                 <p className="comments__copy">{comment.comment}</p>
                             </div>
