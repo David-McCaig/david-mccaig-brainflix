@@ -236,13 +236,13 @@
     }
   
     &__btn {
-      width: 72%;
+      width: 71.5%;
       height: 2.7rem;
       background-color: $color-primary-2;
       color: $color-primary-4;
       border-radius: .3rem;
       margin-top: .7rem;
-      margin-left: 4.3rem;
+      margin-left: 4rem;
       border: 0rem;
       text-transform: uppercase;
       display: flex;
@@ -253,7 +253,7 @@
   
       @include tablet {
         width: 10rem;
-        height: 2.9rem;
+        height: 2.6rem;
         margin: -.04rem 0rem 0rem 2.4rem;
       }
     }
@@ -275,7 +275,7 @@
       border-radius: 50%;
       margin-left: .5rem;
       position: relative;
-      bottom: 3rem;
+      bottom: .7rem;
       left: .7rem;
   
       @include tablet {

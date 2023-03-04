@@ -14,6 +14,7 @@ function VideoInfo({ selectedVideo, selectedComments }) {
 
     const handleChange = (e) => {
         setComment(e.target.value)
+        return comment
     }
 
     const handleSubmit = (e) => {
