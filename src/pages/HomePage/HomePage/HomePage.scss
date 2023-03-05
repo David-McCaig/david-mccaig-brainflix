@@ -1,19 +1,6 @@
 @use '/src/styles/partials/variables' as *;
 @use '/src/styles/partials/mixins' as *;
 
-
-
-// .description__contain {
-
-//   @include desktop {
-//     display: flex;
-//     flex-direction: column;
-//     width: 52.5rem;
-//     width: 52.5rem;
-//     display: inline-block;
-//   }
-// }
-
 .video__info {
 
   @include desktop {

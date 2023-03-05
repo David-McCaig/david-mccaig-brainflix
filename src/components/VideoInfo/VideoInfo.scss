@@ -291,18 +291,18 @@
     height: 9rem;
     border-top: 1px solid $secondary-color-3;
     justify-content: center;
-    margin-top: 1rem;
-    padding: .5rem;
+    margin: 1rem 1rem .5rem 1rem;
+    // padding: .5rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   
     @include tablet {
       height: 6rem;
-      width: 100%;
+      width: 98%;
       padding: 1rem 0rem 2rem 0rem;
       display: inline-block;
-      margin-left: 1.2rem;
+      margin: 0rem 1rem 0rem 1.5rem;
     }
   
     @include desktop {
@@ -322,7 +322,7 @@
     }
   
     &__container {
-      width: 21rem;
+      width: 17rem;
       display: flex;
       height: 2.5rem;
   
@@ -388,7 +388,7 @@
     height: 2.4rem;
     border-radius: 50%;
     background-color: $secondary-color-3;
-    margin: 1rem .5rem .5rem 1rem;
+    margin: 1rem .5rem .5rem 0rem;
   
   }
 

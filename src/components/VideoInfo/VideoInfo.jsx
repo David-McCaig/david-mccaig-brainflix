@@ -14,11 +14,10 @@ function VideoInfo({ selectedVideo, selectedComments }) {
 
     const handleChange = (e) => {
         setComment(e.target.value)
-        return comment
     }
 
     const handleSubmit = (e) => {
-        
+        e.preventDefault()
         axios
         .post ('http://localhost:8080/comments/upload', {
             "comment": comment,
@@ -79,7 +78,7 @@ function VideoInfo({ selectedVideo, selectedComments }) {
                             </button>
                         </div>
                     </form>
-
+                    <h1>{comment}</h1>
                 {selectedComments && selectedComments.map((comment) => {
                     return (
                         <div className="comments" key={comment.id}>

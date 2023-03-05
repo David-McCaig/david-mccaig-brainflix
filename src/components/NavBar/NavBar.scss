@@ -106,10 +106,6 @@
   }
 }
 
-
-
-
-
 .nav__form-image-desktop {
   display: none;
 
@@ -124,15 +120,14 @@
 }
 
 .button {
-  width: 97%;
+  width: 82vw;
   height: 2.7rem;
   background-color: $color-primary-2;
   border-radius: .3rem;
   margin-top: .5rem;
   display: flex;
   text-decoration: none;
-
-
+  margin-right: 1rem;
 
   @include tablet {
     width: 36%;
