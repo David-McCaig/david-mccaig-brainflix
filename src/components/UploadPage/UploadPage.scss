@@ -21,7 +21,10 @@ label {
     height: 90rem;
 
     @include desktop {
-       
+       width: 80%;
+       justify-content: center;
+       margin-left: 8rem;
+       margin: auto;
     }
 
     &__title {
@@ -36,6 +39,10 @@ label {
             padding: 2rem 0rem 1.5rem 0rem;
             margin: 0rem 1.5rem;
             border-bottom: 1px $secondary-color-3 solid;
+        }
+
+        @include desktop {
+            max-width: 70rem;
         }
         
     }
@@ -60,10 +67,8 @@ label {
         max-width: 32rem;
 
         @include tablet {
-            margin-left: 1rem;
+            margin: 0rem 0rem 1rem 1rem;
             padding-left: 0rem;
-            // display: flex;
-            // flex-direction: column;
         }
     }
 
@@ -91,7 +96,6 @@ label {
 
         @include tablet {
             display: flex;
-            justify-content: start;
             margin: 1rem 0rem 0rem 1rem;
         }
     }
@@ -115,9 +119,14 @@ label {
         border: 1px solid $secondary-color-3;
         background-color: $secondary-color-4;
         text-decoration: none;
-        @include desktop {
-            width: 50rem;
 
+        @include tablet {
+            max-width: 50rem;
+        }
+        @include desktop {
+            width: 36.4rem;
+            max-width: 50rem;
+            margin: 0rem 0rem 0rem 0rem;
         }
 
     }
@@ -128,15 +137,19 @@ label {
         margin: .4rem 0rem 1rem 1rem;
         width: 90%;
         height: 5rem;
-        // display: flex;
         border-radius: .3rem;
         border: 1px solid $secondary-color-3;
         background-color: $secondary-color-4;
         display: flex;
         text-decoration: none;
+        
+        @include tablet {
+            max-width: 50rem;
+        }
         @include desktop {
-            width: 50rem;
-
+            width: 36.4rem;
+            margin-left: 0rem;
+            max-width: 50rem;
         }
 
     }
@@ -209,11 +222,11 @@ textarea::placeholder {
 
 
 .button-publish {
-    width: 96%;
+    width: 91%;
     height: 2.7rem;
     background-color: $color-primary-2;
     border-radius: .3rem;
-    margin: .5rem 1rem 0rem .4rem;
+    margin: .5rem 1rem 0rem 1.1rem;
     display: flex;
     justify-content: center;
     text-decoration: none;
@@ -223,7 +236,7 @@ textarea::placeholder {
     @include tablet {
         width: 10rem;
         height: 2.6rem;
-        margin: 1.6rem 3.7rem 0rem 0rem;
+        margin: 1.6rem 0rem 0rem 0rem;
 
     }
 
@@ -266,9 +279,12 @@ textarea::placeholder {
         margin-top: 1.7rem;
         border-top: 1px solid $secondary-color-3;
         margin: 0rem 1.5rem;
+        max-width: 50rem;
     }
 
     @include desktop {
-        max-width: 82.25rem;
+        max-width: 70rem;
+        margin-right: 0rem;
+        margin-left: .7rem;
     }
 }
