@@ -4,7 +4,6 @@ import ViewIcon from "../../assets/Icons/views.svg"
 import AddComment from "../../assets/Icons/add_comment.svg";
 import SearchFace from "../../assets/images/Mohan-muruge.jpg";
 import React, {useState} from "react"
-import { format } from 'date-fns';
 import axios from "axios";
 
 
@@ -30,8 +29,16 @@ function VideoInfo({ selectedVideo, selectedComments }) {
             console.log(error)
         })
     }
-
+    let dateObj = new Date(selectedVideo.created_at)
     
+    //function to convert timeStamp format
+    const getDate = () => {
+    let month = dateObj.getMonth() + 1
+    let date = dateObj.getDate()
+    let year = dateObj.getFullYear()
+
+    return(`${month}/${date}/${year}`)
+   }
 
     return (
         <> 
@@ -44,7 +51,7 @@ function VideoInfo({ selectedVideo, selectedComments }) {
                             <p>{selectedVideo.channel}</p>
                         </div>
                         
-                        <p className="description-output__date">{format(new Date(selectedVideo.created_at), 'yyyy/mm/dd')}</p>
+                        <p className="description-output__date">{getDate(selectedVideo.created_at)}</p>
                     </div>
 
                     <div className="description-output__container">
@@ -85,8 +92,8 @@ function VideoInfo({ selectedVideo, selectedComments }) {
                                 <div className="comments__container">
                                     <div className="images"></div>
                                     <p className="comments__title">{comment.name}</p>
-                                    <p className="comments__date">{format(new Date((comment.created_at.slice(0,10))), 'yyyy-mm-dd')}</p>
-                                    {console.log((comment.created_at))}
+                                    <p className="comments__date">{getDate(comment.created_at)}</p>
+                                    {/* {console.log((comment.created_at))} */}
                                 </div>
                                 <p className="comments__copy">{comment.comment}</p>
                             </div>
