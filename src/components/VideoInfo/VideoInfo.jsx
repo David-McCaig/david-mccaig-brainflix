@@ -17,6 +17,7 @@ function VideoInfo({ selectedVideo, selectedComments }) {
     }
 
     const handleSubmit = (e) => {
+        e.preventDefault()
         axios
         .post ('http://localhost:8080/comments/upload', {
             "comment": comment,
@@ -30,7 +31,7 @@ function VideoInfo({ selectedVideo, selectedComments }) {
         })
     }
 
-    console.log(selectedVideo.created_at)
+    
 
     return (
         <> 
@@ -43,7 +44,7 @@ function VideoInfo({ selectedVideo, selectedComments }) {
                             <p>{selectedVideo.channel}</p>
                         </div>
                         
-                        <p className="description-output__date">{format(new Date(selectedVideo.created_at), 'yyyy/dd/dd')}</p>
+                        <p className="description-output__date">{format(new Date(selectedVideo.created_at), 'yyyy/mm/dd')}</p>
                     </div>
 
                     <div className="description-output__container">
@@ -84,7 +85,8 @@ function VideoInfo({ selectedVideo, selectedComments }) {
                                 <div className="comments__container">
                                     <div className="images"></div>
                                     <p className="comments__title">{comment.name}</p>
-                                    <p className="comments__date">{format(new Date(comment.created_at), 'yyyy/dd/dd')}</p>
+                                    <p className="comments__date">{format(new Date((comment.created_at.slice(0,10))), 'yyyy-mm-dd')}</p>
+                                    {console.log((comment.created_at))}
                                 </div>
                                 <p className="comments__copy">{comment.comment}</p>
                             </div>
