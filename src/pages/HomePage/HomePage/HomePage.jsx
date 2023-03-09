@@ -29,8 +29,14 @@ function HomePage() {
 
   const filteredVideos = videos.filter((video) => video.id !== videoToDisplay);
 
-  const [selectedVideo, setSelectedVideo] = useState(null);
-  const [selectedComments, setSelectedComments] = useState(null);
+  const [selectedVideo, setSelectedVideo] = useState([]);
+  const [selectedComments, setSelectedComments] = useState([]);
+  // const [catchs, setcatches] = useState('')
+
+  // const handleSubmit = (postComment) => {
+  //   setcatches(postComment);
+  // };
+  // console.log(catchs)
 
   const URLID = "http://localhost:8080";
   // const API = "?api_key=18488576-2451-45b9-a5fd-965ff3e2a3ac";
@@ -48,6 +54,7 @@ function HomePage() {
               .get(URLID + "/videos/" + videoToDisplay + "/comments")
               .then((innerResponse) => {
                 setSelectedComments(innerResponse.data)
+                console.log(innerResponse.data)
               })
               .catch((err) => {
                 console.log(err)
@@ -62,13 +69,26 @@ function HomePage() {
       return <div>Loading......</div>;
   }
 
+  const handleSubmit = (e, postComment) => {
+    e.preventDefault()
+    axios
+    .post ('http://localhost:8080/comments/upload', {
+        "comment": postComment,
+        "videos_id": selectedVideo.id
+    })
+    .then ((res) => {
+        console.log(res)
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+}
   
-
   return (
     <>
         <Video selectedVideo={selectedVideo} />
         <div className="video__info">
-        <VideoInfo selectedVideo={selectedVideo} selectedComments={selectedComments} />
+        <VideoInfo selectedVideo={selectedVideo} selectedComments={selectedComments} handleSubmit={handleSubmit}  />
         <Item videos={filteredVideos} />
         </div>
     </>

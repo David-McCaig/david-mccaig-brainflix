@@ -7,28 +7,29 @@ import React, {useState} from "react"
 import axios from "axios";
 
 
-function VideoInfo({ selectedVideo, selectedComments }) {
+function VideoInfo({ selectedVideo, selectedComments, handleSubmit }) {
    
-    const [comment, setComment] = useState("");
+    const [postComment, setPostComment] = useState("");
 
     const handleChange = (e) => {
-        setComment(e.target.value)
+        setPostComment(e.target.value)
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        axios
-        .post ('http://localhost:8080/comments/upload', {
-            "comment": comment,
-            "videos_id": selectedVideo.id
-        })
-        .then ((res) => {
-            console.log(res)
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-    }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+    //     axios
+    //     .post ('http://localhost:8080/comments/upload', {
+    //         "comment": postComment,
+    //         "videos_id": selectedVideo.id
+    //     })
+    //     .then ((res) => {
+    //         console.log(res)
+    //     })
+    //     .catch((error) => {
+    //         console.log(error)
+    //     })
+    // }
+    
     let dateObj = new Date(selectedVideo.created_at)
     
     //function to convert timeStamp format
@@ -73,18 +74,19 @@ function VideoInfo({ selectedVideo, selectedComments }) {
             </section>
 
             <section>
-                    <form className="form" onSubmit={handleSubmit}>
+                    <form className="form" onSubmit={e => handleSubmit(e, postComment)}>
                         <p className="form__title">3 Comments</p>
                         <label className="form__comment" form="formComment">JOIN THE CONVERSATION</label>
                         <div className="form__container">
                             <img src={SearchFace} className="form__img" alt="Side profile of person" />
-                            <input className="form__input" value={comment} onChange={handleChange} id="formComment" placeholder="Add a new comment" name="formComment" required=""></input>
+                            <input className="form__input" value={postComment} onChange={handleChange} id="formComment" placeholder="Add a new comment" name="formComment" required=""></input>
 
                             <button className="form__btn" id="formSubmit" type="submit">comment
                                 <img src={AddComment} className="form__icon" alt="Add comment button" />
                             </button>
                         </div>
                     </form>
+                    
                 {selectedComments && selectedComments.map((comment) => {
                     return (
                         <div className="comments" key={comment.id}>
