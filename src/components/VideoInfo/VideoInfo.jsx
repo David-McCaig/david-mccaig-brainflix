@@ -8,19 +8,21 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 
 
-function VideoInfo({ selectedVideo, selectedComments,handlePost }) {
+function VideoInfo({ selectedVideo, selectedComments,handlePost, validation}) {
 
     const [postComment, setPostComment] = useState("");
-    const [validation, setValidation] = useState("");
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    // const { register, handleSubmit } = useForm();
+   
 
     const handleChange = (e) => {
         setPostComment(e.target.value)
     }
 
-    const formValidation = () => {
+    // const handlePost = () => {
+    //     console.log('I post')
+    // }
 
-    }
+    
 
     let dateObj = new Date(selectedVideo.created_at)
 
@@ -71,15 +73,18 @@ function VideoInfo({ selectedVideo, selectedComments,handlePost }) {
                         <label className="form__comment" form="formComment">JOIN THE CONVERSATION</label>
                         <div className="form__container">
                             <img src={SearchFace} className="form__img" alt="Side profile of person" />
+                            <div className="form__wrapper">
                             <input
                                 className="form__input"
-                                value={postComment} onChange={handleChange}
+                                value={postComment} 
+                                onChange={handleChange}
                                 id="formComment"
                                 placeholder="Add a new comment"
                                 name="formComment"
                                 required="">
                             </input>
-                            <p className="error__message">{validation}</p>
+                           <p className="form__validation">{validation}</p>
+                           </div>
                             <button className="form__btn" id="formSubmit" type="submit">comment
                                 <img src={AddComment} className="form__icon" alt="Add comment button" />
                             </button>
@@ -103,6 +108,8 @@ function VideoInfo({ selectedVideo, selectedComments,handlePost }) {
                     })}
                 </section>
             </div>
+
+            
         </>
     );
 }

@@ -14,6 +14,8 @@ function HomePage() {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState([]);
   const [selectedComments, setSelectedComments] = useState([]);
+  const [validation, setValidation] = useState('');
+  
 
 
   const defaultVideoId = videos.length > 0 ? videos[0].id : null;
@@ -36,12 +38,20 @@ function HomePage() {
 
   const URLID = "http://localhost:8080";
 
+  //form validation for empty form field
+  const validate = (comment) => {
 
+   
+  }
+  
   //TODO: seperate query with comments and videos. 
   // const handleGetComment = useCallback(() => {
   function handlePost( e, postComment, setPostComment) {
-    e.preventDefault();
-
+    e.preventDefault(); 
+    if(postComment.length < 2) {
+      setValidation('Input field is required!')
+      return false
+    }
     axios
       .post('http://localhost:8080/comments/upload', {
         "comment": postComment,
@@ -51,6 +61,7 @@ function HomePage() {
         console.log(res);
         handleGetComment();
         setPostComment('')
+        setValidation('')
       })
       .catch((error) => {
         console.log(error);
@@ -106,7 +117,7 @@ function HomePage() {
     <>
       <Video selectedVideo={selectedVideo} />
       <div className="video__info">
-        <VideoInfo selectedVideo={selectedVideo} selectedComments={selectedComments} handlePost={handlePost} />
+        <VideoInfo selectedVideo={selectedVideo} selectedComments={selectedComments} handlePost={handlePost} validation={validation}/>
         <Item videos={filteredVideos} />
       </div>
     </>
