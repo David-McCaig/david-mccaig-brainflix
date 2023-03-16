@@ -15,7 +15,6 @@ function HomePage() {
   const [validation, setValidation] = useState('');
 
 
-
   const defaultVideoId = videos.length > 0 ? videos[0].id : null;
 
   const URL = "http://localhost:8080";
@@ -38,44 +37,44 @@ function HomePage() {
 
   //TODO: seperate query with comments and videos. 
   // const handleGetComment = useCallback(() => {
-    function handleGetComment() {
-      axios
-        .get(URLID + "/videos/" + videoToDisplay + "/comments")
-        .then((response) => {
-          setSelectedComments(response.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
 
-    useEffect(() => {
-      axios
-        .get(URL + "/videos")
-        .then((response) => {
-          setVideos(response.data);
-        })
-        .catch((err) => {
-          console.log(err)
-        })
-    }, []);
+  function handleGetComment() {
+    axios
+      .get(URLID + "/videos/" + videoToDisplay + "/comments")
+      .then((response) => {
+        setSelectedComments(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
-    useEffect(() => {
-      if (!selectedVideo) return
-      axios
-        .get(URLID + "/videos/" + videoToDisplay)
-        .then((response) => {
-          setSelectedVideo(response.data);
-          handleGetComment();
-        })
-        .catch((err) => {
-          console.log(err)
-        })
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [videoToDisplay])
+  useEffect(() => {
+    axios
+      .get(URL + "/videos")
+      .then((response) => {
+        setVideos(response.data);
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(URLID + "/videos/" + videoToDisplay)
+      .then((response) => {
+        setSelectedVideo(response.data);
+        handleGetComment();
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [videoToDisplay])
 
 
-    function handlePost(e, postComment, setPostComment) {
+  function handlePost(e, postComment, setPostComment) {
     e.preventDefault();
     if (postComment.length < 2) {
       setValidation('Input field is required!')
@@ -87,7 +86,6 @@ function HomePage() {
         "videos_id": selectedVideo.id
       })
       .then((res) => {
-        console.log(res);
         handleGetComment();
         setPostComment('')
         setValidation('')
