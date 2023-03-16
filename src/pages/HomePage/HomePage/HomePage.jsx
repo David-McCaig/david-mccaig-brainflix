@@ -6,8 +6,6 @@ import React, { useEffect } from "react";
 import Item from "../../../components/Item/Item";
 import VideoInfo from "../../../components/VideoInfo/VideoInfo";
 import Video from "../../../components/Video/Video";
-import { useForm } from "react-hook-form";
-
 
 function HomePage() {
 
@@ -15,7 +13,7 @@ function HomePage() {
   const [selectedVideo, setSelectedVideo] = useState([]);
   const [selectedComments, setSelectedComments] = useState([]);
   const [validation, setValidation] = useState('');
-  
+
 
 
   const defaultVideoId = videos.length > 0 ? videos[0].id : null;
@@ -31,24 +29,55 @@ function HomePage() {
 
   //TODO: Make state variable telling me I have a video.
 
-
   // const [allowCommentQuery, setAllowCommentQuery] = useState(true);
   // const [haveVideo, setHaveVideo] = useState(false);
-
 
   const URLID = "http://localhost:8080";
 
   //form validation for empty form field
-  const validate = (comment) => {
 
-   
-  }
-  
   //TODO: seperate query with comments and videos. 
   // const handleGetComment = useCallback(() => {
-  function handlePost( e, postComment, setPostComment) {
-    e.preventDefault(); 
-    if(postComment.length < 2) {
+    function handleGetComment() {
+      axios
+        .get(URLID + "/videos/" + videoToDisplay + "/comments")
+        .then((response) => {
+          setSelectedComments(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+
+    useEffect(() => {
+      axios
+        .get(URL + "/videos")
+        .then((response) => {
+          setVideos(response.data);
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }, []);
+
+    useEffect(() => {
+      if (!selectedVideo) return
+      axios
+        .get(URLID + "/videos/" + videoToDisplay)
+        .then((response) => {
+          setSelectedVideo(response.data);
+          handleGetComment();
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [videoToDisplay])
+
+
+    function handlePost(e, postComment, setPostComment) {
+    e.preventDefault();
+    if (postComment.length < 2) {
       setValidation('Input field is required!')
       return false
     }
@@ -68,44 +97,6 @@ function HomePage() {
       });
   }
 
-
-
-  useEffect(() => {
-    axios
-    .get(URL + "/videos")
-    .then((response) => {
-      setVideos(response.data);
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }, []);
-
-  function handleGetComment() {
-    axios
-      .get(URLID + "/videos/" + videoToDisplay + "/comments")
-      .then((response) => {
-        setSelectedComments(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
-  useEffect(() => {
-    if (!selectedVideo) return
-    axios
-      .get(URLID + "/videos/" + videoToDisplay)
-      .then((response) => {
-        setSelectedVideo(response.data);
-        handleGetComment();
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [videoToDisplay])
-
   //TODO:Make an effect hook that watches for the I have a video variable. once that is true calls handlegetcomments.Want to start an interval with the get comment hook.
 
   if (!selectedVideo) {
@@ -117,7 +108,7 @@ function HomePage() {
     <>
       <Video selectedVideo={selectedVideo} />
       <div className="video__info">
-        <VideoInfo selectedVideo={selectedVideo} selectedComments={selectedComments} handlePost={handlePost} validation={validation}/>
+        <VideoInfo selectedVideo={selectedVideo} selectedComments={selectedComments} handlePost={handlePost} validation={validation} />
         <Item videos={filteredVideos} />
       </div>
     </>

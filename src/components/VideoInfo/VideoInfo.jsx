@@ -4,15 +4,12 @@ import ViewIcon from "../../assets/Icons/views.svg"
 import AddComment from "../../assets/Icons/add_comment.svg";
 import SearchFace from "../../assets/images/Mohan-muruge.jpg";
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import axios from "axios";
 
-
-function VideoInfo({ selectedVideo, selectedComments,handlePost, validation}) {
+function VideoInfo({ selectedVideo, selectedComments, handlePost, validation }) {
 
     const [postComment, setPostComment] = useState("");
     // const { register, handleSubmit } = useForm();
-   
+
 
     const handleChange = (e) => {
         setPostComment(e.target.value)
@@ -21,8 +18,6 @@ function VideoInfo({ selectedVideo, selectedComments,handlePost, validation}) {
     // const handlePost = () => {
     //     console.log('I post')
     // }
-
-    
 
     let dateObj = new Date(selectedVideo.created_at)
 
@@ -70,21 +65,23 @@ function VideoInfo({ selectedVideo, selectedComments,handlePost, validation}) {
                 <section>
                     <form className="form" onSubmit={e => handlePost(e, postComment, setPostComment)}>
                         <p className="form__title">3 Comments</p>
-                        <label className="form__comment" form="formComment">JOIN THE CONVERSATION</label>
                         <div className="form__container">
-                            <img src={SearchFace} className="form__img" alt="Side profile of person" />
-                            <div className="form__wrapper">
-                            <input
-                                className="form__input"
-                                value={postComment} 
-                                onChange={handleChange}
-                                id="formComment"
-                                placeholder="Add a new comment"
-                                name="formComment"
-                                required="">
-                            </input>
-                           <p className="form__validation">{validation}</p>
-                           </div>
+                            <div className="form__containers">
+                                <label className="form__comment" form="formComment">JOIN THE CONVERSATION</label>
+                                <div className="form__wrapper">
+                                    <img src={SearchFace} className="form__img" alt="Side profile of person" />
+                                    <input
+                                        className="form__input"
+                                        value={postComment}
+                                        onChange={handleChange}
+                                        id="formComment"
+                                        placeholder="Add a new comment"
+                                        name="formComment"
+                                        required="">
+                                    </input>
+                                </div>
+                                <p className="form__validation">{validation}</p>
+                            </div>
                             <button className="form__btn" id="formSubmit" type="submit">comment
                                 <img src={AddComment} className="form__icon" alt="Add comment button" />
                             </button>
@@ -99,7 +96,6 @@ function VideoInfo({ selectedVideo, selectedComments,handlePost, validation}) {
                                         <div className="images"></div>
                                         <p className="comments__title">{comment.name}</p>
                                         <p className="comments__date">{getDate(comment.created_at)}</p>
-                                        {/* {console.log((comment.created_at))} */}
                                     </div>
                                     <p className="comments__copy">{comment.comment}</p>
                                 </div>
@@ -109,7 +105,7 @@ function VideoInfo({ selectedVideo, selectedComments,handlePost, validation}) {
                 </section>
             </div>
 
-            
+
         </>
     );
 }
