@@ -314,10 +314,10 @@ section {
     height: 2.3rem;
     object-fit: cover;
     border-radius: 50%;
-    margin: 0rem 0rem .5rem 1.1rem;
+    margin: 0rem 0rem 3rem 1.1rem;
 
     @include tablet {
-      margin-top: .1rem;
+      margin: .1rem 0rem .5rem 1.1rem;
     }
 
     @include desktop {
@@ -393,18 +393,14 @@ section {
     @include tablet {
       margin-right: -30rem;
       position: relative;
-      left: 20rem;
-    }
-
-    @include desktop {
-      left: 20rem;
+      left: 22rem;
     }
   }
 
   &__copy {
     font-family: $font-regular;
     line-height: 1.125rem;
-    margin-left: 4rem;
+    margin-left: 3.2rem;
 
     @include tablet {
       width: 40rem;
