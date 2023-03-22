@@ -70,7 +70,7 @@ function VideoInfo({ selectedVideo, selectedComments, handlePost, validation }) 
                                 <label className="form__comment" form="formComment">JOIN THE CONVERSATION</label>
                                 <div className="form__wrapper">
                                     <img src={SearchFace} className="form__img" alt="Side profile of person" />
-                                    <input
+                                    <textarea
                                         className="form__input"
                                         value={postComment}
                                         onChange={handleChange}
@@ -78,7 +78,7 @@ function VideoInfo({ selectedVideo, selectedComments, handlePost, validation }) 
                                         placeholder="Add a new comment"
                                         name="formComment"
                                         required="">
-                                    </input>
+                                    </textarea>
                                 </div>
                                 <p className="form__validation">{validation}</p>
                             </div>

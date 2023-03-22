@@ -70,6 +70,10 @@ label {
             margin: 0rem 0rem 1rem 1rem;
             padding-left: 0rem;
         }
+
+        @include desktop {
+            margin-left: 0rem;
+        }
     }
 
     &__container {
@@ -97,6 +101,10 @@ label {
         @include tablet {
             display: flex;
             margin: 1rem 0rem 0rem 1rem;
+        }
+
+        @include desktop {
+            margin-left: 0rem;
         }
     }
 
@@ -126,7 +134,7 @@ label {
         @include desktop {
             width: 36.4rem;
             max-width: 50rem;
-            margin: 0rem 0rem 0rem 0rem;
+            margin: .3rem 0rem 0rem 0rem;
         }
 
     }
@@ -153,8 +161,15 @@ label {
         }
 
     }
-    
 
+    &__validation {
+        color: red;
+        margin: 0rem 0rem 0rem 1rem;
+
+        @include desktop {
+            margin: .5rem 0rem 0rem 0rem;
+        }
+    }
 }
 
 .upload-form__cont {
@@ -173,9 +188,15 @@ label {
 }
 }
 
+
 input::placeholder {
     color: black;
     font-family: $font-regular;
+    padding-left: .25rem;
+}
+
+textarea::placeholder {
+    padding: .5rem 0rem 0rem .25rem;
 }
 
 textarea::placeholder {

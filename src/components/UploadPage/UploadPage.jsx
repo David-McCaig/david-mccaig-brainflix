@@ -13,6 +13,8 @@ function UploadPage() {
 
   const [imageFile, setImageFile] = useState(null);
   const [imagePreview, setImagePreview] = useState();
+  const [validationTitle, setValidationTitle] = useState('');
+  const [validationDescription, setValidationDescription] = useState('');
   const inputEl = useRef(null);
 
 
@@ -36,10 +38,19 @@ function UploadPage() {
     setImagePreview(URL.createObjectURL(event.target.files[0]));//set preview
   }
 
-  const uploadVideo = (event) => {
-    event.preventDefault()
-    const apiURL = "http://localhost:8080/videos/upload";
+  function validation(state, setState) {
+    if (state.length < 2) {
+      setState('Input field is required!')
+      return false;
+    }
+  }
 
+  const uploadVideo = (event) => {
+    event.preventDefault();
+    validation(values.title, setValidationTitle);
+    validation(values.description, setValidationDescription);
+
+    const apiURL = "http://localhost:8080/videos/upload";
 
     const formData = new FormData();
     formData.append("title", values.title);
@@ -75,11 +86,13 @@ function UploadPage() {
               <div className="upload-form__container">
                 <label className="upload-form__comment" form="formComment">title your video</label>
                 <input id="formtitle" value={values.title} name="title" onChange={handleChange} className="upload-form__input" placeholder="Add a new comment" required=""></input>
+                <p className="upload-form__validation">{validationTitle}</p>
               </div>
               <div>
                 <label className="upload-form__comment" form="formComment">add a video description</label>
                 <div className="upload-form__container">
-                  <input className="upload-form__input-bottom" id="formdescription" value={values.description} name="description" onChange={handleChange} placeholder="Add a description to your video" ></input>
+                  <textarea className="upload-form__input-bottom" id="formdescription" value={values.description} name="description" onChange={handleChange} placeholder="Add a description to your video" ></textarea>
+                  <p className="upload-form__validation">{validationDescription}</p>
                 </div>
               </div>
             </div>
