@@ -280,6 +280,13 @@ section {
     text-transform: uppercase;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    transition: .5s;
+
+    &:hover {
+      background-color: $secondary-color-2;
+      color: white;
+    }
 
     @include tablet {
       width: 10rem;

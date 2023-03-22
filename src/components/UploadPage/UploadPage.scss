@@ -212,9 +212,7 @@ textarea::placeholder {
     margin-top: .5rem;
     display: flex;
     text-decoration: none;
-
-
-
+    
     @include tablet {
         width: 10rem;
         height: 2.6rem;
@@ -253,6 +251,12 @@ textarea::placeholder {
     text-decoration: none;
     border: none;
     cursor: pointer;
+    transition: .5s;
+
+    &:hover {
+        background-color: $secondary-color-2;
+        color: white;
+      }
 
     @include tablet {
         width: 10rem;
