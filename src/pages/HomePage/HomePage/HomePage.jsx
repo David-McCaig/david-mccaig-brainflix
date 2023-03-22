@@ -18,7 +18,6 @@ function HomePage() {
   const defaultVideoId = videos.length > 0 ? videos[0].id : null;
 
   const URL = "http://localhost:8080";
-  // const API = "?api_key=18488576-2451-45b9-a5fd-965ff3e2a3ac";
 
   const { videoId } = useParams();
 
@@ -26,17 +25,7 @@ function HomePage() {
 
   const filteredVideos = videos.filter((video) => video.id !== videoToDisplay);
 
-  //TODO: Make state variable telling me I have a video.
-
-  // const [allowCommentQuery, setAllowCommentQuery] = useState(true);
-  // const [haveVideo, setHaveVideo] = useState(false);
-
   const URLID = "http://localhost:8080";
-
-  //form validation for empty form field
-
-  //TODO: seperate query with comments and videos. 
-  // const handleGetComment = useCallback(() => {
 
   function handleGetComment() {
     axios
@@ -54,6 +43,7 @@ function HomePage() {
       .get(URL + "/videos")
       .then((response) => {
         setVideos(response.data);
+        
       })
       .catch((err) => {
         console.log(err)
@@ -65,6 +55,7 @@ function HomePage() {
       .get(URLID + "/videos/" + videoToDisplay)
       .then((response) => {
         setSelectedVideo(response.data);
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
         handleGetComment();
       })
       .catch((err) => {
@@ -94,8 +85,6 @@ function HomePage() {
         console.log(error);
       });
   }
-
-  //TODO:Make an effect hook that watches for the I have a video variable. once that is true calls handlegetcomments.Want to start an interval with the get comment hook.
 
   if (!selectedVideo) {
     return <div>Loading......</div>;
