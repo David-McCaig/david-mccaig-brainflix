@@ -429,3 +429,7 @@ section {
   color: red;
   margin: .5rem 0rem 0.5rem 4.1rem;
 }
+
+textarea::placeholder {
+  font-family: $font-regular;
+}

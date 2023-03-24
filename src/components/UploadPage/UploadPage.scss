@@ -195,8 +195,9 @@ input::placeholder {
     padding-left: .25rem;
 }
 
-textarea::placeholder {
-    padding: .5rem 0rem 0rem .25rem;
+textarea {
+    padding-left: .25rem;
+    font-family: $font-regular;
 }
 
 textarea::placeholder {
