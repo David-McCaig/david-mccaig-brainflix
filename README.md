@@ -45,7 +45,7 @@ Clone the project
 
 ```bash
   git clone git@github.com:David-McCaig/david-mccaig-brainflix.git for front end
-  git clone git@github.com:David-McCaig/david-mccaig-brainflix-server.git got back end
+  git clone git@github.com:David-McCaig/david-mccaig-brainflix-server.git for back end
 ```
 
 Install dependencies
