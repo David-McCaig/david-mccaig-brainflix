@@ -39,6 +39,8 @@ label {
             padding: 2rem 0rem 1.5rem 0rem;
             margin: 0rem 1.5rem;
             border-bottom: 1px $secondary-color-3 solid;
+            border-top: 0px $secondary-color-3 solid;
+            max-width: 51rem;
         }
 
         @include desktop {
@@ -133,7 +135,6 @@ label {
         }
         @include desktop {
             width: 36.4rem;
-            max-width: 50rem;
             margin: .3rem 0rem 0rem 0rem;
         }
 
