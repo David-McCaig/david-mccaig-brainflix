@@ -1,71 +1,108 @@
-# Getting Started with Create React App
+## Brainflix
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Brainflix is a fully responsive full-stack web application that mimics YouTube. This was one of the first React apps that I created while attending the Brainstation Software Engineering bootcamp. Some of the features include being able to select what video you would like to watch, commenting on each video and uploading a video. Initially the project was built using Express and node for the backend but I decided to go back and build a database using MySQL ,Knex, express and node.
 
-## Available Scripts
+![Parts Bin](parts-bin.gif)
 
-In the project directory, you can run:
 
-### `npm start`
+## Features
+- Bikes and components section
+- View and Add a new part or bike for sale with a photo 
+- Fully responsive design for Mobile-Tablet-Desktop
+- Token based authentication
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Future features**
+- Private message system between users 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+**Client:** 
+HTML5,CSS3,SASS,Javascript,React,NodeJS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,sass,react,nodejs,)](https://skillicons.dev)
 
-### `npm run build`
+**Server:**
+NodeJS, Express, MySQL, knex
+[![My Skills](https://skillicons.dev/icons?i=nodejs,express,mysql)](https://skillicons.dev)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Screenshots
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Home Page
+![Home Page Screenshot](https://res.cloudinary.com/dui1zm17r/image/upload/v1682915123/Github/Screenshot_2023-05-01_at_4.23.52_PM_adnzwe.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Home Page
+![Home Page Screenshot](https://res.cloudinary.com/dui1zm17r/image/upload/v1682915123/Github/Screenshot_2023-05-01_at_4.24.12_PM_ac5jax.png)
 
-### `npm run eject`
+### Upload Page
+![Upload Page Screenshot](https://res.cloudinary.com/dui1zm17r/image/upload/v1682915571/Github/Screenshot_2023-05-01_at_4.29.59_PM_cir99l.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Upload Page
+![Upload Page mobile Screenshot](https://res.cloudinary.com/dui1zm17r/image/upload/v1682915578/Github/Screenshot_2023-05-01_at_4.24.50_PM_yxkkog.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Run Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Clone the project
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+  git clone git@github.com:David-McCaig/david-mccaig-brainflix.git for front end
+  git clone git@github.com:David-McCaig/david-mccaig-brainflix-server.git got back end
+```
 
-## Learn More
+Install dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  npm install 
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In server side 
+run migration and seed files to set up your database.
 
-### Code Splitting
+```bash
+  npx knex migrate:latest 
+  npx knex seed:run 
+```
+Start the server on the server side 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+  npm run dev 
+```
+Start the server on the client side 
 
-### Analyzing the Bundle Size
+```bash
+  npm run start
+```
+Now the app should be live! 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## API Documentation
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### Get all videos
 
-### Advanced Configuration
+```
+  GET /videos
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#### Get videos by id
 
-### Deployment
+```
+  GET /videos/:id
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Get selected comments by videos id
 
-### `npm run build` fails to minify
+```
+  GET /videos/:id/comments
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# david-mccaig-brainflix
+#### Post a video
+
+```
+  Post /videos/upload
+```
+
+#### Post a comment
+
+```
+  Post /comments/upload
+```
+
