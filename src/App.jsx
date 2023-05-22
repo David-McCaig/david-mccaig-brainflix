@@ -5,7 +5,6 @@ import UploadPage from "./pages/Upload";
 import UploadSuccess from "./pages/UploadSuccess/UploadSuccess";
 import HomePage from "./pages/HomePage/HomePage/HomePage";
 import NotFound from "./pages/NotFound"
-// import { BrowserRouter } from "react-router-dom";
 
 
 function App() {

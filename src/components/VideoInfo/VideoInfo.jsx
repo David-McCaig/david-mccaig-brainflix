@@ -8,16 +8,10 @@ import React, { useState } from "react";
 function VideoInfo({ selectedVideo, selectedComments, handlePost, validation }) {
 
     const [postComment, setPostComment] = useState("");
-    // const { register, handleSubmit } = useForm();
-
 
     const handleChange = (e) => {
         setPostComment(e.target.value)
     }
-
-    // const handlePost = () => {
-    //     console.log('I post')
-    // }
 
     let dateObj = new Date(selectedVideo.created_at)
 

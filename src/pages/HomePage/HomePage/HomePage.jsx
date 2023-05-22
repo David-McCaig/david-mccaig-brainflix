@@ -7,8 +7,10 @@ import Item from "../../../components/Item/Item";
 import VideoInfo from "../../../components/VideoInfo/VideoInfo";
 import Video from "../../../components/Video/Video";
 
-function HomePage() {
+const API_URL = process.env.REACT_APP_API_URL;
 
+function HomePage() {
+  console.log(API_URL)
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState([]);
   const [selectedComments, setSelectedComments] = useState([]);
@@ -17,19 +19,15 @@ function HomePage() {
 
   const defaultVideoId = videos.length > 0 ? videos[0].id : null;
 
-  const URL = "http://localhost:8080";
-
   const { videoId } = useParams();
 
   const videoToDisplay = videoId || defaultVideoId;
 
   const filteredVideos = videos.filter((video) => video.id !== videoToDisplay);
 
-  const URLID = "http://localhost:8080";
-
   function handleGetComment() {
     axios
-      .get(URLID + "/videos/" + videoToDisplay + "/comments")
+      .get(API_URL + "/videos/" + videoToDisplay + "/comments")
       .then((response) => {
         setSelectedComments(response.data);
       })
@@ -40,7 +38,7 @@ function HomePage() {
 
   useEffect(() => {
     axios
-      .get(URL + "/videos")
+      .get(API_URL + "/videos")
       .then((response) => {
         setVideos(response.data);
         
@@ -52,7 +50,7 @@ function HomePage() {
 
   useEffect(() => {
     axios
-      .get(URLID + "/videos/" + videoToDisplay)
+      .get(API_URL + "/videos/" + videoToDisplay)
       .then((response) => {
         setSelectedVideo(response.data);
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
@@ -72,7 +70,7 @@ function HomePage() {
       return false
     }
     axios
-      .post('http://localhost:8080/comments/upload', {
+      .post(`${API_URL}/comments/upload`, {
         "comment": postComment,
         "videos_id": selectedVideo.id
       })

@@ -5,7 +5,7 @@ import ButtonPublish from "../../assets/Icons/publish.svg"
 import { useState, useRef } from "react";
 import axios from "axios";
 
-
+const API_URL = process.env.REACT_APP_API_URL;
 
 function UploadPage() {
 
@@ -50,14 +50,12 @@ function UploadPage() {
     validation(values.title, setValidationTitle);
     validation(values.description, setValidationDescription);
 
-    const apiURL = "http://localhost:8080/videos/upload";
-
     const formData = new FormData();
     formData.append("title", values.title);
     formData.append("description", values.description);
     formData.append("imageFile", imageFile);
     axios
-      .post(apiURL, formData, {
+      .post(`${API_URL}/videos/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
