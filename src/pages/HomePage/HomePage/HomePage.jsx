@@ -10,7 +10,7 @@ import Video from "../../../components/Video/Video";
 const API_URL = process.env.REACT_APP_API_URL;
 
 function HomePage() {
-  console.log(API_URL)
+  
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState([]);
   const [selectedComments, setSelectedComments] = useState([]);
