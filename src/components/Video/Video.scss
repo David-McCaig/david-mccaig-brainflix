@@ -7,11 +7,21 @@
   background-color: black;
 
   &__container {
+    min-height: 10rem;
     height: 100%;
+
+    @include tablet {
+      min-height: 23rem;
+    }
   }
 
   &__content {
+    min-height: 10rem;
     width: 100%;
     height: 100%;
+
+    @include tablet {
+      min-height: 23rem;
+    }
   }
 }
