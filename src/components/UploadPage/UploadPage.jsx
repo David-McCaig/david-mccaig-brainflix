@@ -80,6 +80,7 @@ function UploadPage() {
         <form onSubmit={uploadVideo} id="Uploading" className="upload-form">
           <div className="upload-form__cont">
             <img src={imagePreview} width="100%" className="upload__image" ></img>
+            <div className="upload-form__space"></div>
             <div className="upload-form__conttwo">
               <input type='file' className="upload__image" name="image" ref={inputEl} onChange={handleFileChange} ></input>
               <div className="upload-form__container">
