@@ -2,7 +2,8 @@
 
 Brainflix is a fully responsive full-stack web application that mimics YouTube. Instead of using videos we used photos. This was one of the first React apps that I created while attending the Brainstation Software Engineering bootcamp. Some of the features include being able to select what video you would like to watch, commenting on each video and uploading a video. Initially the project was built using Express and node for the backend but I decided to go back and build a database using MySQL ,Knex, express and node.
 
-![Parts Bin](parts-bin.gif)
+### Home Page
+![Home Page Screenshot](https://res.cloudinary.com/dui1zm17r/image/upload/v1682915123/Github/Screenshot_2023-05-01_at_4.23.52_PM_adnzwe.png)
 
 ## Tech Stack
 
