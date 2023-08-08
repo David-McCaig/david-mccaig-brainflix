@@ -10,9 +10,9 @@ import Video from "../../../components/Video/Video";
 const API_URL = process.env.REACT_APP_API_URL;
 
 function HomePage() {
-  
+
   const [videos, setVideos] = useState([]);
-  const [selectedVideo, setSelectedVideo] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState(null);
   const [selectedComments, setSelectedComments] = useState([]);
   const [validation, setValidation] = useState('');
 
@@ -41,7 +41,6 @@ function HomePage() {
       .get(API_URL + "/videos")
       .then((response) => {
         setVideos(response.data);
-        
       })
       .catch((err) => {
         console.log(err)
@@ -53,7 +52,7 @@ function HomePage() {
       .get(API_URL + "/videos/" + videoToDisplay)
       .then((response) => {
         setSelectedVideo(response.data);
-        window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
         handleGetComment();
       })
       .catch((err) => {
@@ -85,7 +84,11 @@ function HomePage() {
   }
 
   if (!selectedVideo) {
-    return <div>Loading......</div>;
+    return (
+      <div className="loader__container">
+        <div className="loader"></div>
+      </div>
+    )
   }
 
 
